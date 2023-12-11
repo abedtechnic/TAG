@@ -18,7 +18,7 @@
             </div>
            
         </div>
-        <img src="images/02.jpg" alt="pic1">
+        <img src="{{ asset('images/02.jpg') }}" alt="pic1" loading="lazy">
     </div>
 
 
@@ -36,7 +36,7 @@
       <div class="article-wrapper">
  
   <figure>
-    <img src="images/تنزيل (2).jpeg" alt="" />
+    <img src="{{asset('images/تنزيل (2).jpeg')}}" alt="picture" loading="lazy" />
   </figure>
   <div class="article-body">
     <h2>الرؤيه والرساله</h2>
@@ -66,7 +66,7 @@
   
       <div class="article-wrapper">
         <figure>
-          <img src="images/تنزيل (1).png" alt="" />
+          <img src="{{asset('images/تنزيل (1).png')}}" alt="picture" loading="lazy" />
         </figure>
         <div class="article-body">
           <h2>الاهداف</h2>
@@ -93,7 +93,7 @@
   
       <div class="article-wrapper">
         <figure>
-          <img src="images/04.jpg" alt="" />
+          <img src="{{asset('images/04.jpg')}}" alt="picture" loading="lazy" />
         </figure>
         <div class="article-body">
           <h2>حقائق عنا</h2>

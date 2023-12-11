@@ -6,21 +6,21 @@ use Illuminate\Http\Request;
 
 class prodectsController extends Controller
  {
-//     public function index()
-//     {
-//         return view('index');
-//     }
-
-
-    public function show()
-{
-    return view('products');
-}
-
-public function show2() 
+    public function index()
     {
-        return view('products_2');
+        return view('pages/index');
     }
+
+
+//     public function show()
+// {
+//     return view('products');
+// }
+
+// public function show2() 
+//     {
+//         return view('products_2');
+//     }
    
 
   
@@ -29,24 +29,26 @@ public function show2()
 
     public function contact()
     {
-        return view('contact');
+        return view('pages/contact');
     }
     
     public function about()
     {
-        return view('about');
+        return view('pages/about');
     }
 
     public function why()
     {
-        return view('why');
+        return view('pages/why');
     }
     public function newproduct(){
-        return view('newproduct');
+        return view('pages/newproduct');
     }
     public function work(){
-        return view('work');
+        return view('pages/work');
     }
+    
+   
 }
 
 

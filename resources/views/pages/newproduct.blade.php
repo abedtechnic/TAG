@@ -13,7 +13,7 @@
 
   
 </p>
-    <img src="images/12.png" alt="tag_img"  >
+    <img src="{{asset('images/12.png')}}" alt="tag_img" loading="lazy" >
     
 </div>
 <hr>
@@ -81,7 +81,7 @@
                     الأسمنت البورتلاندى العادى – المتميز – ( مكافىء 52,5R )
                     الاسمنت البورتلاندى العادى ( مكافىء 42,5 R )
                   </p>
-              <img src="images/الاسمنت.jpeg" alt="">
+              <img src="{{asset('images/الاسمنت.jpeg')}}" alt="الاسمنت" loading="lazy">
              
             </div>
           </li>
@@ -94,7 +94,7 @@
                     نقدم نحن في مجموعة التاج منتجات الأسمنت والخرسانة الجاهزة والبلك بجودة ابتكارية ومتجددة تفوق
                      توقعات العملاء، وتتكيف مع معايير وسياسات الجودة، وتفي بمتطلبات التجديد والتحديث في تكنولوجيا البناء والتصميم، سواء كان ذلك في ناحية الإسكان أو الأبنية التجارية، أو الصناعية، أو ناطحات السحاب، وكذا مشاريع البنية التحتية، حيث ننتج مختلف أنواع الخرسانة الجاهزة مثل  
                   </p>
-              <img src="images/خرسانه.jpeg" alt="">
+              <img src="{{asset('images/خرسانه.jpeg')}}" alt="picture" loading="lazy">
              
             </div>
           </li>
@@ -107,7 +107,7 @@
                     شركة التاج تعتبر المنتج الأكبر للبلوك الإسمنتي على مستوى الوطن حيث ننتج جميع أنواع ومقاسات البلوك الإسمنتي المفرغ،
                      والهوردي، والمصمت.. وبجودة عالية وفقاً لأعلى المواصفات المعتمدة عالمياً.
                   </p>
-              <img src="images/3 (1).jpg" alt="">
+              <img src="{{asset('images/3 (1).jpg')}}" alt="picture" loading="lazy">
              
             </div>
           </li>
@@ -140,7 +140,7 @@
                 <p>                 
                     قيد الانشاء
                   </p>
-              <img src="images/تنزيل (1).jpeg" alt="">
+              <img src="{{asset('images/تنزيل (1).jpeg')}}" alt="picture" loading="lazy">
              
             </div>
           </li>
@@ -152,7 +152,7 @@
                 <p>
                   قيد الانشاء                 
                   </p>
-              <img src="images/تنزيل (2).jpeg" alt="">
+              <img src="{{asset('images/تنزيل (2).jpeg')}}" alt="picture" loading="lazy">
              
             </div>
           </li>
@@ -164,7 +164,7 @@
                 <p>
                     قيد الانشاء
                   </p>
-              <img src="images/images (6).jpeg" alt="">
+              <img src="{{asset('images/images (6).jpeg')}}" alt="picture" loading="lazy">
              
             </div>
           </li>

@@ -16,13 +16,12 @@
         rel="stylesheet">
     <!-- font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-    <!-- Venobox Css -->
-    {{-- <link rel="stylesheet" href="css/venobox.min.css"> --}}
-    <!-- Bootstrap Css -->
-    {{-- <link rel="stylesheet" href="css/rtl.css"> --}}
-    <link rel="stylesheet" href="css/style.css">
-    {{-- <link rel="stylesheet" href="css/all.min.css">
-    <link rel="stylesheet" href="css/normalize.css"> --}}
+   
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+  
+    <link rel="icon" type="image/png" href="{{ asset('images/imageslogo.png') }}" style="width: 500px; height: 500px " >
+
+    
 </head>
  
    
@@ -30,6 +29,7 @@
 
 <!-- end new Navbar -->
 <body>
+ 
     <section class="navbar">
         <nav>
             <div class="menu-icon">
@@ -41,12 +41,12 @@
 
             <div class="nav-items">
                 <ul>
-                    <li><a href="/" class="active">@lang('public.home') </a></li>
+                    <li><a href="{{ route('index') }}" class="active">@lang('public.home') </a></li>
                     <li><a href="{{ route('about') }}">@lang('public.ABOUT')</a></li>
                     <li><a href="{{ route('newproduct') }}">@lang('public.PRODUCTS')</a></li>
                     <li><a href="{{ route('work') }}">@lang('public.WORK')</a></li>
                     <li><a href="{{ route('why') }}">  @lang('public.WHY')</a></li>
-                    <li><a href="">@lang('public.CONTACT')</a></li>
+                    <li><a href="{{ route('contact') }}">@lang('public.CONTACT')</a></li>
                 </ul>
                 
                     <select class="langselect" onchange="changeLanguage(this.value)">
@@ -55,39 +55,8 @@
                     </select>
                 
             </div>
-            {{-- <div class="nav-items">
-                <li><a href="/" class="active">@lang('public.home') </a></li>
-            <li><a href="{{route('about')}}">@lang('public.ABOUT')</a></li>
-            <li><a href="{{route('newproduct')}}">@lang('public.PRODUCTS')</a></li>
-            <li><a href="{{route('work')}}">@lang('public.WORK')</a></li>
-            <li><a href="{{route('why')}}"> @lang('public.WHY')</a></li>
-            <li><a href="{{route('contact')}}"> @lang('public.CONTACT')</</a></li>
-           
-            </div>
             
-             <select class="langselect">
-                <option >arabic</option>
-                <option >english</option>
-               </select>  --}}
-
-
-               {{-- <li class="nav-item dropdown">
-                <a id="navbarDropdown" class="nav-link dropdown-toggle text-sm text-decoration-none" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                    <span class="fi fi-{{ Config::get('languages')[App::getLocale()]/['flag-icon'] }}"></span>
-                    {{ Config::get('languages')[App::getLocale()]['display'] }}
-                </a>
-                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    @foreach (Config::get('languages') as $lang => $language)
-                    @if ($locale != App::getLocale())
-                    <a class="dropdown-item" href="{{ Route('lang.setlang', $locale) }}">
-                        <span class="fi fi-{{ $language['flag-icon'] }}"></span>
-                        {{ $language['display'] }}
-                    </a>
-                    @endif
-                    @endforeach
-                </div>
-            </li> 
-                dropdown --}}
+              
            
             <div class="cancel-icon ">
                 <span class="fas fa-times"></span>
@@ -110,10 +79,10 @@
         <footer>
             <div class="footercontainer">
                 <div class="socialicon">
-                    <a href=""><i class="fa-brands fa-facebook"></i></a>
-                    <a href=""><i class="fa-brands fa-instagram"></i></a>
-                    <a href=""><i class="fa-brands fa-linkedin"></i></a>
-                    <a href=""><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.facebook.com/altag.co123" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/altag_ye?fbclid=IwAR0ST-jMtpjGtvVmhNKK8zFigsII9QngpaDXMk0Mi11ovgATkytS-MvvAi8" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://twitter.com/altag_ye?fbclid=IwAR0TDw1tcbtyegkBhGdLYvsMfRvQhh_DTPrhgf9UvM4F5t-CvxkK22L5JqU" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://www.youtube.com/altag_ye?fbclid=IwAR1hb4CP9D8oZVTeJXka0Hlz8L-87arg4oH1J3EKMCOPwzHIbvULe7F8TAg" target="_blank"><i class="fa-brands fa-youtube"></i></a>
                     
                 </div>
                 <div class="footerlist">
@@ -121,7 +90,7 @@
                         <li><a href="/">الصفحه الرئيسيه</a></li>
                         <li><a href="{{route('about')}}">من نحن</a></li>
                         <li><a href="{{route('why')}}">لماذا نحن</a></li> 
-                        <li><a href="{{route('work')}}">اعمالنا </a></li>              
+                        <li><a href="{{route('work')}}">اخر الاخبار </a></li>              
                          <li><a href="{{route('newproduct')}}">المنتجات</a></li>
                         <li><a href="{{route('contact')}}">تواصل معنا</a></li>            
                     </ul>
