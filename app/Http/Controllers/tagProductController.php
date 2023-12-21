@@ -13,7 +13,7 @@ class tagProductController extends Controller
     $showAllbrand = products::all();
 
     //Go To Screen With Data
-    return view('pages.newproduct');
+    return view('pages.newproduct', compact('showAllbrand'));
 }
 
 public function create()

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class prodectsController extends Controller
  {
-  
+
 
 
 //     public function show()
@@ -14,13 +14,13 @@ class prodectsController extends Controller
 //     return view('products');
 // }
 
-// public function show2() 
+// public function show2()
 //     {
 //         return view('products_2');
 //     }
-   
 
-  
+
+
 
     ///////
     public function index()
@@ -31,24 +31,24 @@ class prodectsController extends Controller
     {
         return view('pages/contact');
     }
-    
+
     public function about()
     {
         return view('pages/about');
     }
 
-    public function why()
-    {
-        return view('pages/why');
-    }
+    // public function why()
+    // {
+    //     return view('pages/why');
+    // }
     public function newproduct(){
         return view('pages/newproduct');
     }
     public function work(){
         return view('pages/work');
     }
-    
-   
+
+
 }
 
 

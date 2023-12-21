@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>قائمة المنتجات</h1>
-    
+
     <ul>
         @foreach($products as $product)
             <li>
@@ -17,4 +17,4 @@
         @endforeach
     </ul>
 </body>
-</html>
+</html> --}}

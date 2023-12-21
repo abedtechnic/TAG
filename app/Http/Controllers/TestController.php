@@ -14,7 +14,8 @@ class TestController extends Controller
     {
         $showData = test::all();
 
-        return view('pages.newproduct',compact('showData'));
+        //Go To Screen With Data
+        return view('test', compact('showData'));
 
     }
 
