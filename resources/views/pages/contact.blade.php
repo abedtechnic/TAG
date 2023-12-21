@@ -3,7 +3,7 @@
 @section('content')
 
 <!-------Contact Start------->
-<section class="contact section-padding" style="  padding-top: 90px;" data-scroll-index='6'>
+<section class="contact" style="  padding-top: 90px;" data-scroll-index='6'>
     <div class="container">
        
             <div class="heading text-center mb-5 ">
@@ -64,7 +64,6 @@
     
 </section>
 
-  
   <!-------Contact End-------> 
 
 

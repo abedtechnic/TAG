@@ -174,6 +174,10 @@ html {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* يضمن الحصول على الارتفاع الكامل للعرض */
+  margin: 0;
     font-family: 'Cairo', sans-serif;
     /* font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif; */
     direction: rtl;
@@ -269,7 +273,7 @@ img {
     font-weight: 400;
     line-height: 1.6;
     color: #555;
-    text-align: right;
+    text-align: justify;
 }
 
 .news_title {
@@ -631,7 +635,6 @@ nav{
  
   position: fixed;
   z-index: 99;
-  
   top: 570px;
   width: 100%;
   left: -100%;
@@ -925,7 +928,7 @@ header .text h2 {
 
 /* Start info */
 .info-one {
-    background-color: var(--section-background-color);
+   
     padding: var(--section-padding);
     margin-bottom: 40px;
    
@@ -1498,9 +1501,13 @@ section-services.content-width .box:hover::after {
 
 /* start footer */
 footer{
-    margin-top: 30px;
+  margin-top: auto;
     background-color: #111111;
 }
+.wrapper {
+  flex: 1;
+}
+
 .footercontainer{
     width: 100%;
     padding: 70px 30px 20px;
@@ -1866,6 +1873,7 @@ border-radius: 3px;
   .article-body p{
     line-height: 2;
     font-weight: 600;
+    text-align: justify;
   }
   article a {
     display: inline-flex;
@@ -2245,6 +2253,7 @@ border-radius: 3px;
        letter-spacing:0px;
        line-height:38px;
        font-size: 28px;
+       text-align: center;
        
     }
     
@@ -2480,6 +2489,7 @@ border-radius: 3px;
   
   .section-content2 {
 	margin-top: 80px;
+  margin-bottom:30px;
     
 }
 .contact p{
@@ -2623,6 +2633,7 @@ border-radius: 3px;
 } */
 
 
+
 /* end contact */
 
 /* Start button up */
@@ -2709,6 +2720,7 @@ mark {
 .introduction{
   margin-bottom: 20px;
   font-size:30px;
+  text-align: justify;
   
 }
 
@@ -2947,7 +2959,7 @@ width: 9em;
 
 /* Text Loading */
 .ctn-preloader .animation-preloader .txt-loading {
-font: bold 5em 'Montserrat', sans-serif;
+font: bold 5em 'Montserrat';
   text-align: center;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -3167,3 +3179,8 @@ transition: 3.5s 0.1s all cubic-bezier(0.1, 0.1, 0.1, 2.000);
 
 
 /* end splash */
+
+
+/* html.sr .load-hidden {
+  visibility: hidden;
+} */

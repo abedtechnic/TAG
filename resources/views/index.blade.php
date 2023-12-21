@@ -13,7 +13,7 @@
 
    {{-- splash --}}
 
-   {{-- <div id="preloader-body" class="no-scroll-y">
+   <div id="preloader-body" class="no-scroll-y">
 
     <!-- Start: Preloader -->
     <section id="preloader-section">
@@ -26,15 +26,16 @@
                     
                     <!-- Start: Text Loading -->
                     <div class="txt-loading">
-                        <span data-text-preloader="T" class="letters-loading">T</span>
-                        <span data-text-preloader="A" class="letters-loading">A</span>
-                        <span data-text-preloader="G" class="letters-loading">G</span>
+                      <span data-text-preloader="مجموعة" class="letters-loading">مجموعة</span>
+                        <span data-text-preloader="التاج" class="letters-loading">التاج</span>
+                      
+                        {{-- <span data-text-preloader="G" class="letters-loading">G</span>
                         <span data-text-preloader="~" class="letters-loading">~</span>
                         <span data-text-preloader="G" class="letters-loading">G</span>
                         <span data-text-preloader="R" class="letters-loading">R</span>
                         <span data-text-preloader="O" class="letters-loading">O</span>
                         <span data-text-preloader="U" class="letters-loading">U</span>
-                        <span data-text-preloader="P" class="letters-loading">P</span>
+                        <span data-text-preloader="P" class="letters-loading">P</span> --}}
                        <!--  <span data-text-preloader="I" class="letters-loading">I</span>
                         <span data-text-preloader="V" class="letters-loading">V</span>
                         <span data-text-preloader="E" class="letters-loading">E</span> -->
@@ -53,7 +54,7 @@
     </section>
     <!-- End: Preloader -->
 
-</div> --}}
+</div>
 {{-- splash --}}  
 
 <section class="intro">
@@ -83,9 +84,9 @@
 
       <ul>
         <nav class="headnav">
-          <a href="#"></a>
-          <a href="#"></a>
-          <a href="#"></a>
+          <a href="#" aria-label="chang the photo in the curser"></a>
+          <a href="#" aria-label="chang the photo in the curser"></a>
+          <a href="#" aria-label="chang the photo in the curser"></a>
         </nav>
       </ul>
     </div>
@@ -109,6 +110,7 @@
     <div class="heading text-center mb-5">
         <h1>من نحن</h1>
         <span></span>
+      </div>
     <div class="row">
         <div class="info-content">
             <div class="heading">
@@ -117,13 +119,14 @@
                     والأسمنت هي شركة وطنية رائدة في مجالها منذ تأسيسها ووضع لبناتها الأولى في العام 2000م في العاصمة اليمنية صنعاء، لتتربع على عرش التفوق والتميز في إنتاج الخرسانة الجاهزة والبلوك الأوتوماتيكي والأسمنت ، لما تمتلكه من مؤهلات جعلتها تحتل هذه المكانة المرموقة، حيث تنتهج نظام الجودة وفقاً للاستاندر البريطاني، والكفاءة العالية للمعدات والآلات، علاوة على الكادر الإداري والفني المؤهل والمدرب،
                      وامتلاكها لأحدث مختبر متجدد على الساحة.</p>
             </div>
+            
             <button>
                 <a href="{{route('about')}}">المزيد</a>
               </button>
         </div>
         <img src="{{asset('images/02.jpg')}}" alt="pic1" loading="lazy">
     </div>
-</div>
+
 </section>
 <!-- End info -->
 
@@ -134,7 +137,7 @@
     <section class="counter">
       <div class="countercontainer">
 
-      <ul>
+      <ul >
           <li style="--accent-color:var(--main-color)">
               <div class="iconcounter"><i class="fa-brands fa-codepen"></i></div>
               <div class="titlecounter">5</div>
@@ -234,7 +237,8 @@
 <section class="home_manager_word"><div class="home_manager_word_content">
    
 <div class="home_manager_word_content_img" >
-    <img src="{{asset('images/person-2.jpg')}}" alt="Manager" loading="lazy"></div>
+    <img src="{{asset('images/person-2.jpg')}}" alt="Manager" loading="lazy">
+  </div>
     <h3 class="home_manager_word_title">
         اسم المدير
     </h3> 
@@ -247,7 +251,6 @@
 
 
 @endsection
-
 
   
     

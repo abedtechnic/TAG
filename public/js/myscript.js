@@ -16,7 +16,7 @@ menuBtn.onclick = ()=>{
 }
 
 cancelBtn.onclick = ()=>{
-  items.classList.remove("active");
+  items.classList.remove("active");	
   menuBtn.classList.remove("hide");
 //   searchBtn.classList.remove("hide");
   cancelBtn.classList.remove("show");
@@ -201,3 +201,38 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 //end splash
+
+
+
+
+// /start scrollreavel animation
+
+document.addEventListener('DOMContentLoaded', function () {
+ScrollReveal({ 
+	// reset: true,
+	distance: '80px',
+	duration: 2500,
+	delay: 300 
+});
+
+// ScrollReveal().reveal('.heading', {  delay: 500 , origin: 'left' });
+ScrollReveal().reveal('.info-one button a', { delay: 300 , origin: 'bottom'});
+ScrollReveal().reveal('.info-one img', { delay: 300 , origin: 'bottom'});
+ScrollReveal().reveal('.counter ul', { delay: 200 , origin: 'left'});
+ScrollReveal().reveal('.why_p', { delay: 200 , origin: 'bottom'});
+ScrollReveal().reveal('.whysection .icon-box', { delay: 200 , interval: 400 });
+ScrollReveal().reveal('.home_manager_word_content_img ,.home_manager_word_title ,.home_manager_word_content_text',{ delay: 200 , origin: 'bottom'});
+// ScrollReveal().reveal('.article-wrapper', { delay: 200 , interval: 400 });
+ScrollReveal().reveal('.why_page .container .why_info ul', { delay: 300 , origin: 'bottom'});
+ScrollReveal().reveal('footer .footerlist li , .socialicon a', { delay: 300 , origin: 'bottom'});
+
+// ScrollReveal().reveal('.articles .article-wrapper', {
+// 	delay: 200,
+// 	distance: '20px',
+// 	origin: 'bottom',
+// 	easing: 'ease-out',
+// 	duration: 1000
+// });
+});
+
+///end scrollreavel animation  info-content
