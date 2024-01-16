@@ -2,7 +2,7 @@
 
 @section('dashcontent')
     <div class="container">
-        {{-- <h2>إضافة خبر جديد</h2>
+        <h2>إضافة خبر جديد</h2>
         <form method="post" action="{{ route('news.store') }}" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
@@ -25,42 +25,13 @@
                 <label for="image_url">الصورة</label>
                 <input type="file" class="form-control-file" id="image_url" name="image_url">
             </div>
+            <br>
             <button type="submit" class="btn btn-primary">حفظ</button>
-
-
-
-        </form> --}}
-        <div class="row">
-            <a
-                class="btn btn-primary" href="{{ route('news.create') }}">Button</a>
+          </form>
+          <br>
+          <div class="row">
+            <a  class="btn btn-primary" href="{{ asset('news/show')}}">عرض البيانات</a>
 
         </div>
-        <table>
-            <thead>
-                <tr>
-                    <th>Title</th>
-                    <th>Image URL</th>
-                    <th>Introduction</th>
-                    <th>Content Tow</th>
-                    <th>Content One</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- استخدم PHP لتكرار هذا الجزء وعرض البيانات -->
-                <tr>
-                    <td>قيمة العنوان</td>
-                    <td>قيمة عنوان الصورة</td>
-                    <td>قيمة المقدمة</td>
-                    <td>قيمة المحتوى 2</td>
-                    <td>قيمة المحتوى 1</td>
-                    {{-- <td>{{ $show->id }}</td>
-                    <td>{{ $show->title }}</td>
-                    <td><img src="{{asset('images/products/' . $show->image_url)}}" alt=""></td>
-                    <td>{{ $show->contentone }}</td>
-                    <td>{{ $show->contentTow }}</td> --}}
-                </tr>
-                <!-- يمكنك تكرار الصفوف مستندًا إلى عدد السجلات في قاعدة البيانات -->
-            </tbody>
-        </table>
     </div>
 @endsection

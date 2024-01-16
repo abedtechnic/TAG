@@ -3,6 +3,7 @@
 @section('dashcontent')
     <div class="container">
         <h2>إضافة منتج جديد</h2>
+
         <form method="post" action="{{ route('why.store') }}" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
@@ -19,5 +20,11 @@
             </div> --}}
             <button type="submit" class="btn btn-primary">حفظ</button>
         </form>
+
+        <br>
+<div class="row">
+    <a  class="btn btn-primary" href="{{ asset('why/show')}}">عرض البيانات</a>
+
+</div>
     </div>
 @endsection

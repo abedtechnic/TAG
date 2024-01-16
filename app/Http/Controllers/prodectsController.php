@@ -23,10 +23,10 @@ class prodectsController extends Controller
 
 
     ///////
-    public function index()
-    {
-        return view('index');
-    }
+    // public function index()
+    // {
+    //     return view('index');
+    // }
     public function dash()
     {
         return view('dashboard/main');
@@ -36,10 +36,10 @@ class prodectsController extends Controller
     //     return view('pages/contact');
     // }
 
-    public function about()
-    {
-        return view('pages/about');
-    }
+    // public function about()
+    // {
+    //     return view('pages/about');
+    // }
 
     // public function why()
     // {

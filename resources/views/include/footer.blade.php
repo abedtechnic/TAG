@@ -10,11 +10,11 @@
         <div class="footerlist">
             <ul>
                 <li><a href="{{route('index')}}">الصفحه الرئيسيه</a></li>
-                <li><a href="{{route('about')}}">من نحن</a></li>
+                <li><a href="{{route('about.index')}}">من نحن</a></li>
                 <li><a href="{{route('why.index')}}">لماذا نحن</a></li>
                 <li><a href="{{route('news.index')}}">اخر الاخبار </a></li>
                  <li><a href="{{route('product.index')}}">المنتجات</a></li>
-                <li><a href="{{route('contact')}}">تواصل معنا</a></li>
+                <li><a href="{{route('contact.index')}}">تواصل معنا</a></li>
             </ul>
         </div>
     </div>

@@ -83,7 +83,7 @@
                         </p>
                 </div>
             </div>
-                
+
         </div>
     </div>
     <!-- End info -->
@@ -94,7 +94,7 @@
     </section>
 
     <p id="purchase">
-        لنساعدك في تحقيق هدفك<a href="{{ route('contact') }}">تواصل معنا </a>
+        لنساعدك في تحقيق هدفك<a href="{{ route('contact.index') }}">تواصل معنا </a>
     </p>
     <hr>
     </div>

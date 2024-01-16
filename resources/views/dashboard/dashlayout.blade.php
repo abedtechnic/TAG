@@ -31,7 +31,7 @@
                   <!-- user menu for top navbar -->
                   <li 	class="user-menu">
                       <a href="#" @click="toggleUserDropdownMenu" @blur="showUserDropdownMenu = false">
-                        <img class="user-profile-pic circle" src="images/user-profile-img.jpg">
+
                       </a>
                       <ul class="user-dropdown-menu dropdown-content" :class="{'user-dropdown-menu-visible': showUserDropdownMenu}">
                         <li>
@@ -57,7 +57,7 @@
                   </li>
                   <!-- End of user menu - top navbar -->
                   <!-- Other likns in right section of top navbar -->
-                  <li>
+                  {{-- <li>
                     <a href="#">
                       <i class="material-icons">notifications</i>
                       <span class="badge-navbar">7</span>
@@ -67,7 +67,7 @@
                     <a href="#">
                       <i class="material-icons">lock</i>
                     </a>
-                  </li>
+                  </li> --}}
                 </ul>
                 <!-- end of left section - top navbar -->
               </div>
@@ -76,7 +76,7 @@
           <!-- End of fixed top navbar -->
 
           <!-- Search navbar -->
-          <div class="navbar-search" v-show="showSearchNav">
+          {{-- <div class="navbar-search" v-show="showSearchNav">
             <nav>
               <div class="nav-wrapper">
                 <form>
@@ -88,7 +88,7 @@
                 </form>
               </div>
             </nav>
-          </div>
+          </div> --}}
           <!-- End of search navbar -->
         </div>
         <!-- End of top-navbars -->
@@ -107,13 +107,21 @@
               </div>
             </li>
 
-            <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+            <li><a href="#!"><i class="">cloud</i>First Link With Icon</a></li>
             <li><a href="{{ asset('why/create') }}">صفحه لماذا نحن</a></li>
             <li><a href="{{ asset('product/create') }}">صفحه المنتجات </a></li>
             <li><a href="{{ asset('news/create') }}">صفحه الاخبار</a></li>
+            <li><a href="{{ asset('contact/show') }}">صفحه التواصل</a></li>
+            <li><a  href="{{ asset('about/create') }}">من نحن</a></li>
+            <li><a  href="{{ asset('card/create') }}">من بطاقه نحن</a></li>
             <li><div class="divider"></div></li>
             <li><a class="subheader">Subheader</a></li>
-            <li><a  href="{{ asset('news/show') }}">Third Link With Waves</a></li>
+            <li><a  href="{{ asset('/create') }}">Third Link With Waves</a></li>
+            <li><a  href="{{ asset('counter/create') }}">Third Link With Waves</a></li>
+            <li><a  href="{{ asset('contact_info') }}">Third Link With Waves</a></li>
+
+            <li><a  href="{{ asset('category') }}"> category</a></li>
+            <li><a  href="{{ asset('/create') }}"> item</a></li>
           </ul>
         </aside>
         <!-- End of main sidebar -->

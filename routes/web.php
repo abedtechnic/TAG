@@ -1,15 +1,14 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\prodectsController;
-// use App\Http\Controllers\products2Controller;
-use App\Http\Controllers\LanguagesController;
-// use App\Http\Controllers\tagProductController;
-use App\Http\Controllers\TestController;
 use App\Http\Controllers\WhyController;
 use App\Http\Controllers\contactcontroller;
 use App\Http\Controllers\productcontroller;
 use App\Http\Controllers\newsController;
+use App\Http\Controllers\itemController;
+use App\Http\Controllers\aboutController;
+use App\Http\Controllers\contactinfoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,43 +19,27 @@ use App\Http\Controllers\newsController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-// Route::get('/', function () {
-//     return view('index');
-
-// });
-
-// pages route
-Route::get('/', [prodectsController::class, 'index'])->name('index');
-Route::get('pages/contact', [prodectsController::class, 'contact'])->name('contact');
-Route::get('pages/about', [prodectsController::class, 'about'])->name('about');
-// Route::get('pages/newproduct', [prodectsController::class, 'newproduct'])->name('newproduct');
-// Route::get('pages/work', [prodectsController::class, 'work'])->name('work');
-Route::get('dashboard/main', [prodectsController::class, 'dash'])->name('dash');
-
-
-
-// language routes
-
-// Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => '\App\Http\Controllers\LanguagesController@switchLang']); //للوصول الى الفونكشن الموجوده في الكنترولر
-Route::get('locale/{lang}',[LanguagesController::class,'setlang']);
-
-
-
-
-///////dynamic
-
-// Route::get('/products', [tagProductController::class, 'indexproduct']);
-// في routes/web.php
-
-
-
-// Route::get('products/create', [tagProductController::class, 'create'])->name('products.create');
-// Route::post('products/store', [tagProductController::class, 'store'])->name('products.store');
-Route::get('/test', [TestController::class, 'show' ])->name('test');
-
 Route::resource('test', TestController::class);
 Route::resource('why', WhyController::class);
 Route::resource('contact', contactcontroller::class);
+Route::resource('contact_info', contactinfoController::class);
 Route::resource('product', productcontroller::class);
 Route::resource('news', newsController::class);
+Route::resource('/', itemController::class);
+Route::resource('about', aboutController::class);
+
+// Route::get('/', function () {
+//     return view('/');
+// });
+
+Route::get('/dashboard/main', function () {
+    return view('/dashboard/main');
+})->middleware(['auth', 'verified'])->name('dash');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__.'/auth.php';

@@ -15,10 +15,10 @@
 	<div class="wrappernews">
 		<div class="overlay"></div>
 	  <div class="wrapperText">
-        <img class="newsimg" src="{{asset('images/products/' . $dataNews->image_url)}}" alt="pic1" loading="lazy">
+        <img class="newsimg" src="{{asset('/images/products/' . $dataNews->image_url)}}" alt="pic1" loading="lazy">
 		{{-- <img  src="{{asset('images/news' . $showDataNews->image_url)}}" alt="picture" loading="lazy"> --}}
 
-		<h1>
+		<h1>    
 
 		  <mark>{{ $dataNews->title }}</mark>
 		</h1>
@@ -29,7 +29,7 @@
 
 	  <div class="articleText">
 		<h4 class="introduction">{{ $dataNews->contentone }}</h4>
-		<p>{{ $dataNews->contentTow }}</p>
+		<p>{{ $dataNews->contenttow }}</p>
 
 	</div>
   </div>

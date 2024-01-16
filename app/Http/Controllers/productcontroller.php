@@ -39,27 +39,13 @@ class productcontroller extends Controller
         $product->productdescription = $request->productdescription;
         $product->image = $request->image;
 
-        // $request->validate([
+        $img = $request->image;
 
-        //     'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // قواعد الصورة
-        // ]);
+        $imgName = time() . '.' . $img->getClientOriginalExtension();
 
+        $request->image->move('images/products', $imgName);
 
-// //   add image to var
-//         $img = $request->image;
-
-//         // // get image name
-           $file_extension = $request -> image -> getClientOriginalExtension();
-
-           //save image with time
-           $file_name = time().'.'.$file_extension;
-
-        // // move image with name to folder in public
-           $path = 'images/products';
-
-           $request->image->move(public_path('images/products'), $file_name);
-         // // / send name of image to culomn in databasew
-        $product->image = $file_name;
+        $product->image = $imgName;
 
         $product->Save();
 

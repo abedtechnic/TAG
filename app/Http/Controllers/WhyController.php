@@ -60,32 +60,52 @@ class WhyController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(why $why)
+    public function show(string $id)
     {
-        //
+        $data = why::all();
+        return view('dashboard.why_show', ['data' => $data]);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(why $why)
+    public function edit($id)
     {
-        //
+        $editWhy = why::find($id);
+        return view('dashboard/why_edit', compact('editWhy'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, why $why)
+    public function update(Request $request, $id)
     {
-        //
+        //find data and update
+        $updateWhy = why::find($id);
+
+        $updateWhy->title= $request->title;
+        $updateWhy->description= $request->description;
+
+        $updateWhy->update();
+
+        return redirect()->route('why.index')->with('status',"data updated");;
+
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(why $why)
+    public function destroy($id)
     {
-        //
+        $deletedata = why::find($id);
+
+        if ($deletedata) {
+            $deletedata->delete();
+
+            return redirect()->back();
+        } else {
+
+            return redirect()->back()->with('error', 'لم يتم العثور على السجل للحذف');
+        }
     }
 }

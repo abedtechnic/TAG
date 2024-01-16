@@ -23,7 +23,7 @@ class newsController extends Controller
     public function create()
     {
         return view('dashboard.news_create');
-    }   
+    }
     /**
      * Store a newly created resource in storage.
      */
@@ -32,10 +32,10 @@ class newsController extends Controller
         $news = new news;
 
         $news->title = $request->title;
-        $news->introduction= $request->introduction;
-        $news->contentone= $request->contentone;
-        $news->contenttow= $request->contenttow;
-        $news->image_url= $request->image_url;
+        $news->introduction = $request->introduction;
+        $news->contentone = $request->contentone;
+        $news->contenttow = $request->contenttow;
+        $image_url = $request->image_url;
 
         //get image name
         $file_extintion = $request->image_url -> getClientOriginalExtension();
@@ -60,30 +60,84 @@ class newsController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $data = news::all();
+        return view('dashboard.news_show', ['data' => $data]);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
-        //
+        $editnews = news::find($id);
+
+        return View('dashboard/news_edit', compact('editnews'));
     }
+
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
-        //
+         // Find Data and Update it
+         $updatenews = news::find($id);
+
+         $updatenews->title = $request->title;
+        $updatenews->introduction = $request->introduction;
+        $updatenews->contentone = $request->contentone;
+        $updatenews->contenttow = $request->contenttow;
+        // $updatenews->image_url = $request->image_url;
+
+
+        $image_url = $request->image_url;
+
+
+    //      if ($image_url) {
+    //          $imgName = time() . '.' . $image_url->getClientOriginalExtension();
+
+    //          $request->image_url->move('news', $imgName);
+
+    //          $updatebrand->news_img = $imgName;
+    //      }
+
+    //      $updatebrand->save();
+
+    //      return redirect()->route('b.index');
+    if ($image_url){
+    $file_extintion = $request->image_url -> getClientOriginalExtension();
+
+        //save image with time
+        $file_name = time().'.'.$file_extintion;
+
+      $path = 'images/news';
+
+      $request->image_url->move(public_path('images/news'), $file_name);
+
+      $news->image_url =$file_name;
     }
+      $updatenews->save();
+
+      return redirect()->route('news.index');
+      }
+
+
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+        $deletedata = news::find($id);
+
+        if ($deletedata) {
+            $deletedata->delete();
+
+            return redirect()->back();
+        } else {
+
+            return redirect()->back()->with('error', 'لم يتم العثور على السجل للحذف');
+        }
+
     }
 }

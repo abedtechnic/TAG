@@ -15,72 +15,69 @@
 
    <div id="preloader-body" class="no-scroll-y">
 
-    <!-- Start: Preloader -->
+
     <section id="preloader-section">
         <div id="preloader">
             <div id="ctn-preloader" class="ctn-preloader">
                 <div class="animation-preloader">
 
-                    <!-- Spinner -->
+
                     <div class="spinner"></div>
 
-                    <!-- Start: Text Loading -->
+
                     <div class="txt-loading">
                       <span data-text-preloader="مجموعة" class="letters-loading">مجموعة</span>
                         <span data-text-preloader="التاج" class="letters-loading">التاج</span>
-
-                        {{-- <span data-text-preloader="G" class="letters-loading">G</span>
-                        <span data-text-preloader="~" class="letters-loading">~</span>
-                        <span data-text-preloader="G" class="letters-loading">G</span>
-                        <span data-text-preloader="R" class="letters-loading">R</span>
-                        <span data-text-preloader="O" class="letters-loading">O</span>
-                        <span data-text-preloader="U" class="letters-loading">U</span>
-                        <span data-text-preloader="P" class="letters-loading">P</span> --}}
-                       <!--  <span data-text-preloader="I" class="letters-loading">I</span>
-                        <span data-text-preloader="V" class="letters-loading">V</span>
-                        <span data-text-preloader="E" class="letters-loading">E</span> -->
                     </div>
-                    <!-- End: Text Loading -->
+
 
                 </div>
 
-                <!-- Start: Preloader sides - Model 1 -->
+
                 <div class="loader-section section-left"></div>
                 <div class="loader-section section-right"></div>
-                <!-- End: Preloader sides - Model 1 -->
+
 
             </div>
         </div>
     </section>
-    <!-- End: Preloader -->
-
 </div>
 {{-- splash --}}
 
 <section class="intro">
 
     <div class="slider" >
+        <ul >
+{{-- @foreach ($sliders as $data)
 
-      <ul >
-        <li style="background-image:url(../images/02.jpg)">
+
+
+        <li style="background-image:url({{ asset('images/slider' . $data->image) }})" alt="slider_pic" loading="lazy">
           <div class="center-y">
-            <h3>الشركه الرائده في اليمن</h3>
-            <a href="{{ route('about') }}">لماذا نحن</a>
+            <h3>
+            {{ $data->main_title }}
+            </h3>
+            <a href="{{ route('about.index') }}">
+                {{ $data->description }}
+            </a>
           </div>
-        </li>
+        </li> --}}
         <li style="background-image:url(https://images.unsplash.com/photo-1451906278231-17b8ff0a8880?crop=entropy&fit=crop&fm=jpg&h=675&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1375)">
           <div class="center-y">
             <h3>الجوده في المنتجات</h3>
-            <a href="{{ route('product.index') }}"> رؤيه المنتجات</a>
+
+            {{-- <a href="{{ route('product.index') }}"> رؤيه المنتجات</a> --}}
           </div>
         </li>
         <li style="background-image:url(https://images.unsplash.com/photo-1456428199391-a3b1cb5e93ab?crop=entropy&fit=crop&fm=jpg&h=675&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1375)">
           <div class="center-y">
             <h3>الالتزام بالمعايير العالميه</h3>
-            <a href="{{route('why.index')}}">تفاصيل اكثر</a>
+
+
           </div>
         </li>
       </ul>
+      {{-- @endforeach --}}
 
       <ul>
         <nav class="headnav">
@@ -108,7 +105,7 @@
 <section class="info-one">
 
     <div class="heading text-center mb-5">
-        <h1>من نحن</h1>
+        <h1></h1>
         <span></span>
       </div>
     <div class="row">
@@ -120,9 +117,9 @@
                      وامتلاكها لأحدث مختبر متجدد على الساحة.</p>
             </div>
 
-            <button>
-                <a href="{{route('about')}}">المزيد</a>
-              </button>
+            {{-- <button>
+                <a href="{{route('about.index')}}">المزيد</a>
+              </button> --}}
         </div>
         <img src="{{asset('images/02.jpg')}}" alt="pic1" loading="lazy">
     </div>
@@ -130,92 +127,138 @@
 </section>
 <!-- End info -->
 
+<!-- Start Info-One -->
+<section class="info-one">
+    @foreach($categories1 as $category)
+    <div class="heading text-center mb-5">
+        <h1>
+            {{ $category->name }}
+        </h1>
+        <span></span>
+      </div>
+      @if($category->items !=null)
+      @foreach($category->items as $item)
+    <div class="row">
+        <div class="info-content">
+            <div class="heading">
+                <h2>
+                    {{ $item->title }}
+                </h2>
+                <p>
+                    {{ $item->description }}
+                    </p>
+            </div>
+
+            {{-- <button>
+                <a href="{{route('about.index')}}">المزيد</a>
+              </button> --}}
+        </div>
+        <img src="{{ $item->image_url }}" alt="{{ $item->title }}" alt="pic1" loading="lazy">
+        {{-- <img src="{{asset('images/02.jpg')}}" alt="pic1" loading="lazy"> --}}
+        @endforeach
+         @else
+     @endif
+    </div>
+    @endforeach
+</section>
+<!-- End info -->
+
 
 
 
     <!--start counter-->
-    <section class="counter">
-      <div class="countercontainer">
+        <section class="counter">
+        <div class="countercontainer">
 
-      <ul >
-          <li style="--accent-color:var(--main-color)">
-              <div class="iconcounter"><i class="fa-brands fa-codepen"></i></div>
-              <div class="titlecounter">5</div>
-              <div class="descr">عدد المصانع </div>
-          </li>
-          <li style="--accent-color:var(--main-color)">
-              <div class="iconcounter"><i class="fa-solid fa-clock"></i></div>
-              <div class="titlecounter">24</div>
-              <div class="descr">ساعات العمل </div>
-          </li>
-          <li style="--accent-color: var(--main-color)">
-              <div class="iconcounter"><i class="fa-solid fa-user-tie"></i></div>
-              <div class="titlecounter">66</div>
-              <div class="descr">عدد الموضفين</div>
+        <ul >
+            <li style="--accent-color:var(--main-color)">
+                <div class="iconcounter"><i class="fa-brands fa-codepen"></i></div>
+                <div class="titlecounter">5</div>
+                <div class="descr">عدد المصانع </div>
+            </li>
+            <li style="--accent-color:var(--main-color)">
+                <div class="iconcounter"><i class="fa-solid fa-clock"></i></div>
+                <div class="titlecounter">24</div>
+                <div class="descr">ساعات العمل </div>
+            </li>
+            <li style="--accent-color: var(--main-color)">
+                <div class="iconcounter"><i class="fa-solid fa-user-tie"></i></div>
+                <div class="titlecounter">66</div>
+                <div class="descr">عدد الموضفين</div>
 
-          </li>
-          <li style="--accent-color:var(--main-color)">
-              <div class="iconcounter"><i class="fa-solid fa-helmet-safety"></i></div>
-              <div class="titlecounter">21</div>
-              <div class="descr">سنوات الخبره</div>
-          </li>
-          <li style="--accent-color:var(--main-color)">
-            <div class="iconcounter"><i class="fa-solid fa-building"></i></div>
-            <div class="titlecounter">103</div>
-            <div class="descr"> المشاريع</div>
-        </li>
-        </div>
-        </section>
-{{-- end counter --}}
-
-
-<!-------About End------->
-
-
-{{-- start why section --}}
-<section class="whysection">
-
-
-      <div class="row">
-        <div class="col-md-12">
-          <div class="heading text-center mb-5  ">
-            <h1>لماذا نحن</h1>
-                  <span></span>
-      </div>
-
-            <p class="why_p">
-                نحرص على الالتزام بالمبادئ السامية التي كانت سراً من أسرار النجاح الذي وصلت إليه. كل ذلك رسم وما يزال يرسم مسيرة نجاح وتميز في طريق تحقيق الأهداف الاستراتيجية، نحو التوسع والتطور الذي كانت خطوته الأولى افتتاح فرع المتحدة للخرسانة في مدينة الحديدة وما تلاها من المنشآت والمرافق المترجمة للخطة الاستراتيجية لهذا الصرح الوطني العملاق.
-
-                </p>
-
-          <div class="section-content text-center">
-            <div class="flex-container">
-              <div class="icon-box">
-                <i class="fa-solid fa-hand-fist"></i>
-                <h5>الدقه والانضباط</h5>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto maiores .</p>
-              </div>
-              <div class="icon-box">
-                <i class="fa-regular fa-handshake"></i>
-                <h5>المصداقية والأمانة</h5>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto maiores .</p>
-              </div>
-              <div class="icon-box">
-                <i class="fa-solid fa-shield"></i>
-                <h5>حماية البيئة</h5>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto maiores .</p>
-              </div>
+            </li>
+            <li style="--accent-color:var(--main-color)">
+                <div class="iconcounter"><i class="fa-solid fa-helmet-safety"></i></div>
+                <div class="titlecounter">21</div>
+                <div class="descr">سنوات الخبره</div>
+            </li>
+            <li style="--accent-color:var(--main-color)">
+                <div class="iconcounter"><i class="fa-solid fa-building"></i></div>
+                <div class="titlecounter">103</div>
+                <div class="descr"> المشاريع</div>
+            </li>
             </div>
-            <div class="newbtn"  >
-            <button >
-                <a style="align-items: center" href="{{route('why.index')}}">المزيد</a>
-              </button>
-            </div>
-          </div>
+            </section>
+    {{-- end counter --}}
+
+
+    <!-------About End------->
+
+
+    {{-- start why section --}}
+    <section class="whysection">
+
+
+        <div class="row">
+            <div class="col-md-12">
+            <div class="heading text-center mb-5  ">
+                <h1>لماذا نحن</h1>
+                    <span></span>
         </div>
-      </div>
-    </div>
-  </section>
+
+                <p class="why_p">
+                    نحرص على الالتزام بالمبادئ السامية التي كانت سراً من أسرار النجاح الذي وصلت إليه. كل ذلك رسم وما يزال يرسم مسيرة نجاح وتميز في طريق تحقيق الأهداف الاستراتيجية، نحو التوسع والتطور الذي كانت خطوته الأولى افتتاح فرع المتحدة للخرسانة في مدينة الحديدة وما تلاها من المنشآت والمرافق المترجمة للخطة الاستراتيجية لهذا الصرح الوطني العملاق.
+
+                    </p>
+
+            <div class="section-content text-center">
+                <div class="flex-container">
+                <div class="icon-box">
+                    <i class="fa-solid fa-hand-fist"></i>
+                    <h5>الدقه والانضباط</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto maiores .</p>
+                </div>
+                <div class="icon-box">
+                    <i class="fa-regular fa-handshake"></i>
+                    <h5>المصداقية والأمانة</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto maiores .</p>
+                </div>
+                <div class="icon-box">
+                    <i class="fa-solid fa-shield"></i>
+                    <h5>حماية البيئة</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto maiores .</p>
+                </div>
+                <div class="icon-box">
+                    <i class="fa-solid fa-shield"></i>
+                    <h5>حماية البيئة</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto maiores .</p>
+                </div>
+                <div class="icon-box">
+                    <i class="fa-solid fa-shield"></i>
+                    <h5>حماية البيئة</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto maiores .</p>
+                </div>
+                </div>
+                {{-- <div class="newbtn"  >
+                <button >
+                    <a style="align-items: center" href="{{route('why.index')}}">المزيد</a>
+                </button>
+                </div> --}}
+            </div>
+            </div>
+        </div>
+        </div>
+    </section>
 
 
   {{-- end why section --}}
@@ -227,26 +270,39 @@
 
 
  <section class="manager_speech">
+    @foreach($categories1 as $category)
     <div class="heading text-center mb-5  ">
-        <h1> كلمة المدير</h1>
+        <h1>  {{ $category->name }}</h1>
             <span></span>
      </div>
 
+     @if($category->items !=null)
+     @foreach($category->items as $item)
 
+     <section class="home_manager_word"><div class="home_manager_word_content">
 
-<section class="home_manager_word"><div class="home_manager_word_content">
+     <div class="home_manager_word_content_img" >
+         <img src="{{ $item->image_url }}" alt="{{ $item->title }}">
+     </div>
+       </div>
+         <h3 class="home_manager_wor    d_title">
+             {{ $item->title }}
+         </h3>
+      <p class="home_manager_word_content_text" style="transform: translate(0px, 0px); opacity: 1; visibility: inherit;">
+         <p>{{ $item->description }}</p>
+     </p>
+    </div>
+    </section>
 
-<div class="home_manager_word_content_img" >
-    <img src="{{asset('images/person-2.jpg')}}" alt="Manager" loading="lazy">
-  </div>
-    <h3 class="home_manager_word_title">
-        اسم المدير
-    </h3>
- <p class="home_manager_word_content_text" style="transform: translate(0px, 0px); opacity: 1; visibility: inherit;">
-    نحرص على الالتزام بالمبادئ السامية التي كانت سراً من أسرار النجاح الذي وصلت إليه. كل ذلك رسم وما يزال يرسم مسيرة نجاح وتميز في طريق تحقيق الأهداف الاستراتيجية، نحو التوسع والتطور الذي كانت خطوته الأولى افتتاح فرع المتحدة للخرسانة في مدينة الحديدة وما تلاها من المنشآت والمرافق المترجمة للخطة الاستراتيجية لهذا الصرح الوطني العملاق.
-</p></div></section>
+     @endforeach
+     @else
+     @endif
+
+<br>
+@endforeach
 </section>
 
+{{-- @endforeach --}}
 {{-- maneger speech --}}
 
 

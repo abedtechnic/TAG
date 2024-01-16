@@ -23,19 +23,16 @@
                     <li><a href="{{ route('contact') }}">@lang('public.CONTACT')</a></li>
                 </ul> --}}
                  <ul>
-                    <li><a href="{{route('index')}}" class="{{ Request::is('index') ? 'active' : '' }}">@lang('public.home')</a></li>
-                    <li><a href="{{ route('about') }}" class="{{ Request::is('pages/about') ? 'active' : '' }}">@lang('public.ABOUT')</a></li>
+                    <li><a href="{{route('index')}}">@lang('public.home')</a></li>
+                    <li><a href="{{ route('about.index') }}" >@lang('public.ABOUT')</a></li>
                     <li><a href="{{ route('product.index') }}" >@lang('public.PRODUCTS')</a></li>
                     <li><a href="{{ route('news.index') }}">@lang('public.WORK')</a></li>
                     <li><a href="{{ route('why.index') }}" class="{{ Request::is('pages/why') ? 'active' : '' }}">@lang('public.WHY')</a></li>
-                    <li><a href="{{ route('contact') }}" class="{{ Request::is('pages/contact') ? 'active' : '' }}">@lang('public.CONTACT')</a></li>
+                    <li><a href="{{ route('contact.index') }}" class="{{ Request::is('pages/contact') ? 'active' : '' }}">@lang('public.CONTACT')</a></li>
                 </ul>
 
 
-                    <select class="langselect" onchange="changeLanguage(this.value)">
-                        <option value="ar"><a href="locale/ar">العربية</a></option>
-                        <option value="en"><a href="locale/en">الانجليزيه</a></option>
-                    </select>
+                 
 
             </div>
 

@@ -58,7 +58,20 @@ return [
             'visibility' => 'public',
             // 'throw' => false,
         ],
-
+        'about' => [
+            'driver' => 'local',
+            'root' => base_path() . 'public/images/about' ,
+            'url' => env('APP_URL').'/public',
+            'visibility' => 'public',
+            // 'throw' => false,
+        ],
+        'mainpage' => [
+            'driver' => 'local',
+            'root' => base_path() . 'public/images/mainpage' ,
+            'url' => env('APP_URL').'/public',
+            'visibility' => 'public',
+            // 'throw' => false,
+        ],
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),
