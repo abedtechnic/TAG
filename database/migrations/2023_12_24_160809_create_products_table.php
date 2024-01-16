@@ -3,7 +3,6 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-
 return new class extends Migration
 {
     /**
@@ -13,9 +12,12 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->text('description');
-            $table->string('image')->nullable(); // اضفت هذا السطر لتخزين اسم الصورة
+            $table->string('maintitle');
+            $table->string('secondarytitle');
+            $table->text('descriptiontitle');
+            $table->string('productname');
+            $table->text('productdescription');
+            $table->string('image');
             $table->timestamps();
         });
     }

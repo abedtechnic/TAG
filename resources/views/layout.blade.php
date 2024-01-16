@@ -25,8 +25,8 @@
                  <ul>
                     <li><a href="{{route('index')}}" class="{{ Request::is('index') ? 'active' : '' }}">@lang('public.home')</a></li>
                     <li><a href="{{ route('about') }}" class="{{ Request::is('pages/about') ? 'active' : '' }}">@lang('public.ABOUT')</a></li>
-                    <li><a href="{{ route('newproduct') }}" >@lang('public.PRODUCTS')</a></li>
-                    <li><a href="{{ route('work') }}" class="{{ Request::is('pages/work') ? 'active' : '' }}">@lang('public.WORK')</a></li>
+                    <li><a href="{{ route('product.index') }}" >@lang('public.PRODUCTS')</a></li>
+                    <li><a href="{{ route('news.index') }}">@lang('public.WORK')</a></li>
                     <li><a href="{{ route('why.index') }}" class="{{ Request::is('pages/why') ? 'active' : '' }}">@lang('public.WHY')</a></li>
                     <li><a href="{{ route('contact') }}" class="{{ Request::is('pages/contact') ? 'active' : '' }}">@lang('public.CONTACT')</a></li>
                 </ul>

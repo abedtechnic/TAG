@@ -30,7 +30,6 @@
     <h1>نبذه عناا </h1>
     <span></span>
 </div>
-
 <section class="articles">
     <article>
       <div class="article-wrapper">
@@ -59,8 +58,6 @@
     </a>
   </div>
 </div>
-
-
     </article>
     <article>
   

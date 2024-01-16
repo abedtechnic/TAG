@@ -1,4 +1,4 @@
-@extends('layout')
+  {{--@extends('layout')
 
 @section('content')
     <div class="container">
@@ -13,10 +13,10 @@
                 <label for="description">الوصف</label>
                 <textarea class="form-control" id="description" name="description" required></textarea>
             </div>
-            {{-- <div class="form-group">
+           <div class="form-group">
                 <label for="image">الصورة</label>
                 <input type="file" class="form-control-file" id="image" name="image">
-            </div> --}}
+            </div>
             <button type="
             submit" class="btn btn-primary">حفظ</button>
         </form>

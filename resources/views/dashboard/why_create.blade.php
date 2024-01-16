@@ -1,6 +1,6 @@
-@extends('layout')
+@extends('dashboard/dashlayout')
 
-@section('content')
+@section('dashcontent')
     <div class="container">
         <h2>إضافة منتج جديد</h2>
         <form method="post" action="{{ route('why.store') }}" enctype="multipart/form-data">
@@ -17,8 +17,7 @@
                 <label for="image">الصورة</label>
                 <input type="file" class="form-control-file" id="image" name="image">
             </div> --}}
-            <button type="
-            submit" class="btn btn-primary">حفظ</button>
+            <button type="submit" class="btn btn-primary">حفظ</button>
         </form>
     </div>
 @endsection

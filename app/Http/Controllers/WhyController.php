@@ -22,7 +22,7 @@ class WhyController extends Controller
      */
     public function create()
     {
-        return view('pages.why.why_create');
+        return view('dashboard.why_create');
     }
 
     /**

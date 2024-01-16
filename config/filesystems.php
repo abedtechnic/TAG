@@ -44,6 +44,21 @@ return [
             'throw' => false,
         ],
 
+        'products' => [
+            'driver' => 'local',
+            'root' => base_path() . 'public/images/products' ,
+            'url' => env('APP_URL').'/public',
+            'visibility' => 'public',
+            // 'throw' => false,
+        ],
+        'news' => [
+            'driver' => 'local',
+            'root' => base_path() . 'public/images/news' ,
+            'url' => env('APP_URL').'/public',
+            'visibility' => 'public',
+            // 'throw' => false,
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),

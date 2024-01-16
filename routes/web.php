@@ -2,12 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\prodectsController;
-use App\Http\Controllers\products2Controller;
+// use App\Http\Controllers\products2Controller;
 use App\Http\Controllers\LanguagesController;
-use App\Http\Controllers\tagProductController;
+// use App\Http\Controllers\tagProductController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\WhyController;
-
+use App\Http\Controllers\contactcontroller;
+use App\Http\Controllers\productcontroller;
+use App\Http\Controllers\newsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,8 +30,10 @@ use App\Http\Controllers\WhyController;
 Route::get('/', [prodectsController::class, 'index'])->name('index');
 Route::get('pages/contact', [prodectsController::class, 'contact'])->name('contact');
 Route::get('pages/about', [prodectsController::class, 'about'])->name('about');
-Route::get('pages/newproduct', [prodectsController::class, 'newproduct'])->name('newproduct');
-Route::get('pages/work', [prodectsController::class, 'work'])->name('work');
+// Route::get('pages/newproduct', [prodectsController::class, 'newproduct'])->name('newproduct');
+// Route::get('pages/work', [prodectsController::class, 'work'])->name('work');
+Route::get('dashboard/main', [prodectsController::class, 'dash'])->name('dash');
+
 
 
 // language routes
@@ -47,9 +51,12 @@ Route::get('locale/{lang}',[LanguagesController::class,'setlang']);
 
 
 
-Route::get('products/create', [tagProductController::class, 'create'])->name('products.create');
+// Route::get('products/create', [tagProductController::class, 'create'])->name('products.create');
 // Route::post('products/store', [tagProductController::class, 'store'])->name('products.store');
 Route::get('/test', [TestController::class, 'show' ])->name('test');
 
 Route::resource('test', TestController::class);
 Route::resource('why', WhyController::class);
+Route::resource('contact', contactcontroller::class);
+Route::resource('product', productcontroller::class);
+Route::resource('news', newsController::class);

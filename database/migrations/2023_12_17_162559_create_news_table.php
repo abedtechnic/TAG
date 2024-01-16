@@ -16,7 +16,8 @@ return new class extends Migration
             $table->string('title');
             $table->string('image_url');
             $table->text('introduction');
-            $table->text('content');
+            $table->text('contentone');
+            $table->text('contenttow');
             $table->timestamps();
         });
     }

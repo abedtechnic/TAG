@@ -27,10 +27,14 @@ class prodectsController extends Controller
     {
         return view('index');
     }
-    public function contact()
+    public function dash()
     {
-        return view('pages/contact');
+        return view('dashboard/main');
     }
+    // public function contact()
+    // {
+    //     return view('pages/contact');
+    // }
 
     public function about()
     {
@@ -41,12 +45,12 @@ class prodectsController extends Controller
     // {
     //     return view('pages/why');
     // }
-    public function newproduct(){
-        return view('pages/newproduct');
-    }
-    public function work(){
-        return view('pages/work');
-    }
+    // public function newproduct(){
+    //     return view('pages/products/newproduct');
+    // }
+    // public function work(){
+    //     return view('pages/work');
+    // }
 
 
 }
