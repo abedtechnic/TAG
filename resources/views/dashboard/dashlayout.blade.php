@@ -16,7 +16,7 @@
           <div class="navbar-fixed" v-show="! showSearchNav">
             <nav>
               <div class="nav-wrapper ">
-                <a href="#" class="brand-logo center">tag-group</a>
+                <a href="#" class="brand-logo center">مجموعة التاج</a>
                 <!-- right section's icons - top navbar -->
                 <ul class="right topnav-right-items">
                   <li class="right">
@@ -107,21 +107,23 @@
               </div>
             </li>
 
-            <li><a href="#!"><i class="">cloud</i>First Link With Icon</a></li>
+            {{-- <li><a href="#!"><i class="">cloud</i>First Link With Icon</a></li> --}}
+            <li><a  href="{{ asset('/create') }}"> اضافة بيانات القسم</a></li>
+            <li><a  href="{{ asset('category') }}"> اقسام الصفحه الرئيسيه</a></li>
+            <li><a  href="{{ asset('about/create') }}">الاعمال </a></li>
             <li><a href="{{ asset('why/create') }}">صفحه لماذا نحن</a></li>
             <li><a href="{{ asset('product/create') }}">صفحه المنتجات </a></li>
             <li><a href="{{ asset('news/create') }}">صفحه الاخبار</a></li>
-            <li><a href="{{ asset('contact/show') }}">صفحه التواصل</a></li>
-            <li><a  href="{{ asset('about/create') }}">من نحن</a></li>
-            <li><a  href="{{ asset('card/create') }}">من بطاقه نحن</a></li>
+            <li><a href="{{ asset('contact/show') }}">صفحه بيانات التواصل</a></li>
+            <li><a  href="{{ asset('contact_info') }}">بيانات المستخدم المدخله</a></li>
+            {{-- <li><a  href="{{ asset('card/create') }}">من بطاقه نحن</a></li> --}}
             <li><div class="divider"></div></li>
-            <li><a class="subheader">Subheader</a></li>
-            <li><a  href="{{ asset('/create') }}">Third Link With Waves</a></li>
-            <li><a  href="{{ asset('counter/create') }}">Third Link With Waves</a></li>
-            <li><a  href="{{ asset('contact_info') }}">Third Link With Waves</a></li>
+            {{-- <li><a class="subheader">Subheader</a></li> --}}
+            {{-- <li><a  href="{{ asset('/create') }}">Third Link With Waves</a></li> --}}
+            {{-- <li><a  href="{{ asset('counter/create') }}">Third Link With Waves</a></li> --}}
 
-            <li><a  href="{{ asset('category') }}"> category</a></li>
-            <li><a  href="{{ asset('/create') }}"> item</a></li>
+
+            {{-- <li><a  href="{{ asset('/create') }}"> اضافة بيانات القسم</a></li> --}}
           </ul>
         </aside>
         <!-- End of main sidebar -->

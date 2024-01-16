@@ -9,6 +9,7 @@ use App\Http\Controllers\newsController;
 use App\Http\Controllers\itemController;
 use App\Http\Controllers\aboutController;
 use App\Http\Controllers\contactinfoController;
+use App\Http\Controllers\categoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,8 +26,19 @@ Route::resource('contact', contactcontroller::class);
 Route::resource('contact_info', contactinfoController::class);
 Route::resource('product', productcontroller::class);
 Route::resource('news', newsController::class);
-Route::resource('/', itemController::class);
+Route::resource('category', categoryController::class);
 Route::resource('about', aboutController::class);
+Route::resource('/', ItemController::class, [
+    'names' => [
+        'index' => 'items.index',
+        'create' => 'items.create',
+        'store' => 'items.store',
+        'show' => 'items.show',
+        'edit' => 'items.edit',
+        'update' => 'items.update',
+        'destroy' => 'items.destroy',
+    ]
+]);
 
 // Route::get('/', function () {
 //     return view('/');
