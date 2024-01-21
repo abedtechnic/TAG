@@ -30,7 +30,7 @@ Route::resource('category', categoryController::class);
 Route::resource('about', aboutController::class);
 Route::resource('/', ItemController::class, [
     'names' => [
-        'index' => 'items.index',
+        // 'index' => 'items.index',
         'create' => 'items.create',
         'store' => 'items.store',
         'show' => 'items.show',

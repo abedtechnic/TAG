@@ -4,7 +4,7 @@
     <div class="container">
         <h2> اضافه قسم </h2>
 
-<form action="{{ route('category.store') }}" method="post">
+<form action="{{ route('ProductCategory.store') }}" method="post">
     @csrf
 
     {{-- <label for="category_id">اضافه القسم:</label>
@@ -15,9 +15,11 @@
         @endforeach
     </select> --}}
 
-    <label for="name">القسم:</label>
-    <input type="text" name="name" id="name" required>
+    <label for="product_title">القسم الجديد:</label>
+    <input type="text" name="product_title" id="product_title" required>
 
+    <label for="product_desc">وصف القسم:</label>
+    <input type="text" name="product_desc" id="product_desc" required>
 
     <button type="submit">إضافة</button>
 </form>

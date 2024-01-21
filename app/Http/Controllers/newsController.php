@@ -32,26 +32,22 @@ class newsController extends Controller
         $news = new news;
 
         $news->title = $request->title;
-        $news->introduction = $request->introduction;
         $news->contentone = $request->contentone;
         $news->contenttow = $request->contenttow;
-        $image_url = $request->image_url;
+        $news->image_url = $request->image_url;
 
-        //get image name
-        $file_extintion = $request->image_url -> getClientOriginalExtension();
 
-        //save image with time
-        $file_name = time().'.'.$file_extintion;
+        $img = $request->image_url;
 
-      $path = 'images/news';
+        $imgName = time() . '.' . $img->getClientOriginalExtension();
 
-      $request->image_url->move(public_path('images/news'), $file_name);
+        $request->image_url->move('images/news', $imgName);
 
-      $news->image_url =$file_name;
+        $news->image_url = $imgName;
 
-      $news->save();
+        $news->save();
 
-      return redirect()->route('news.index');
+        return redirect()->route('news.index');
 
     }
 
@@ -61,7 +57,7 @@ class newsController extends Controller
     public function show(string $id)
     {
         $data = news::all();
-        return view('dashboard.news_show', ['data' => $data]);
+        return view('dashboard.news_show', compact('data'));
     }
 
     /**
@@ -71,7 +67,7 @@ class newsController extends Controller
     {
         $editnews = news::find($id);
 
-        return View('dashboard/news_edit', compact('editnews'));
+        return View('dashboard.news_edit', compact('editnews'));
     }
 
 
@@ -83,39 +79,23 @@ class newsController extends Controller
          // Find Data and Update it
          $updatenews = news::find($id);
 
-         $updatenews->title = $request->title;
-        $updatenews->introduction = $request->introduction;
+        $updatenews->title = $request->title;
         $updatenews->contentone = $request->contentone;
         $updatenews->contenttow = $request->contenttow;
-        // $updatenews->image_url = $request->image_url;
+        $updatenews->image_url = $request->image_url;
+
+        $img = $request->image_url;
 
 
-        $image_url = $request->image_url;
 
+        if ($img) {
+            $imgName = time() . '.' . $img->getClientOriginalExtension();
 
-    //      if ($image_url) {
-    //          $imgName = time() . '.' . $image_url->getClientOriginalExtension();
+            $request->image_url->move('images/news', $imgName);
 
-    //          $request->image_url->move('news', $imgName);
+            $updatenews->image_url = $imgName;
+        }
 
-    //          $updatebrand->news_img = $imgName;
-    //      }
-
-    //      $updatebrand->save();
-
-    //      return redirect()->route('b.index');
-    if ($image_url){
-    $file_extintion = $request->image_url -> getClientOriginalExtension();
-
-        //save image with time
-        $file_name = time().'.'.$file_extintion;
-
-      $path = 'images/news';
-
-      $request->image_url->move(public_path('images/news'), $file_name);
-
-      $news->image_url =$file_name;
-    }
       $updatenews->save();
 
       return redirect()->route('news.index');

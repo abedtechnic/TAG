@@ -14,7 +14,7 @@
             <th>id</th>
             <th>Title</th>
             <th>Image URL</th>
-            <th>Introduction</th>
+            {{-- <th>Introduction</th> --}}
             <th>ContentOne</th>
             <th>ContentTow</th>
             <th>update</th>
@@ -29,7 +29,7 @@
                     <td>{{ $show->id }}</td>
                     <td>{{ $show->title }}</td>
                     <td><img src="/public/images/news/{{ $show->image_url }}" alt="image"></td>
-                    <td>{{ $show->introduction}}</td>
+                    {{-- <td>{{ $show->introduction}}</td> --}}
                     <td>{{ $show->contentone }}</td>
                     <td>{{ $show->contenttow }}</td>
                     <td>

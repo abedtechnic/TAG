@@ -4,23 +4,28 @@
 
 {{-- start news --}}
 <section class="newswork">
-	<div class="heading text-center mb-5">
+	{{-- <div class="heading text-center mb-5">
 		<h1> اخر الاخبار </h1>
 		<span></span>
-	</div>
+	</div> --}}
     @foreach ($showDataNews as $dataNews)
 
 
 <div class="articlenews">
-	<div class="wrappernews">
+	<div class="wrappernews"style="background: url('{{ asset('images/news' . $dataNews->image_url) }}') no-repeat
+    center center fixed;
+      position: relative; padding: 100px;height: 80vh;background-size: cover;">
 		<div class="overlay"></div>
 	  <div class="wrapperText">
-        <img class="newsimg" src="{{asset('/images/products/' . $dataNews->image_url)}}" alt="pic1" loading="lazy">
+        <img class="newsimg" src="{{asset('images/imageslogo.png')}}" alt="">
+        {{-- <img class="newsimg" src="{{asset('/images/products/' . $dataNews->image_url)}}" alt="pic1" loading="lazy"> --}}
 		{{-- <img  src="{{asset('images/news' . $showDataNews->image_url)}}" alt="picture" loading="lazy"> --}}
 
-		<h1>    
+		<h1>
 
-		  <mark>{{ $dataNews->title }}</mark>
+		  <mark>
+            {{ $dataNews->title }}
+        </mark>
 		</h1>
 
 
@@ -35,7 +40,7 @@
   </div>
   @endforeach
   <div class="articlenews">
-	<div class="wrappernews">
+	<div class="wrappernews" style="background: url(/images/1_3.jpg) no-repeat center center fixed;  position: relative; padding: 100px;height: 80vh;background-size: cover;">
 		<div class="overlay"></div>
 	  <div class="wrapperText">
 		<h1>
@@ -63,58 +68,6 @@
 </section>
 
 {{-- ///////////////////////// --}}
-<section class="work">
-	<div class="heading text-center mb-5">
-		<h1>صور أعمالنا  </h1>
-		<span></span>
-	</div>
-<div class="gallery-image">
-    <div class="img-box">
-
-
-      <img src="{{asset('images/1_3.jpg')}}" alt="picture" loading="lazy" target="_blank" />
-      <div class="transparent-box">
-        <div class="caption">
-          <p>صبية النصر</p>
-          <p class="opacity-low">اعمال صبيه</p>
-        </div>
-      </div>
-    </div>
-    <div class="img-box">
-
-      <img src="{{asset('images/1_4.jpg')}}" alt="picture" target="_blank" loading="lazy" />
-      <div class="transparent-box">
-        <div class="caption">
-          <p> جامع الصالح</p>
-          <p class="opacity-low">مجموعه التاج</p>
-        </div>
-      </div>
-    </div>
-	<div class="img-box">
-
-		<img src="{{asset('images/1_3.jpg')}}" alt="picture" loading="lazy" target="_blank" />
-		<div class="transparent-box">
-		  <div class="caption">
-			<p>صبيه النصر</p>
-			<p class="opacity-low">اعمال صبيه</p>
-		  </div>
-		</div>
-	  </div>
-	  <div class="img-box">
-
-      <img src="{{asset('images/1_4.jpg')}}" alt="picture" loading="lazy" target="_blank"/>
-      <div class="transparent-box">
-        <div class="caption">
-          <p> جامع الصالح</p>
-          <p class="opacity-low">مجموعه التاج</p>
-        </div>
-      </div>
-    </div>
-
-
-  </div>
-</section>
-
 
 @endsection
 

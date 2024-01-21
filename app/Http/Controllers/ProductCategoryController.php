@@ -1,19 +1,19 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\category;
+use App\Models\ProductCategory;
 use Illuminate\Http\Request;
 
-class categoryController extends Controller
+class ProductCategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        
-        $data = category::all();
-        return view('dashboard.category_create', compact('data'));
+
+        $data = ProductCategory::all();
+        return view('dashboard.product.product_category_create', compact('data'));
     }
 
     /**
@@ -29,10 +29,10 @@ class categoryController extends Controller
      */
     public function store(Request $request)
     {
-        $category = new category;
+        $category = new ProductCategory;
 
-        $category->name = $request->name;
-
+        $category->product_title = $request->product_title;
+        $category->product_desc = $request->product_desc;
         $category->save();
 
          return redirect()->back();

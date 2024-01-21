@@ -6,13 +6,13 @@
         <form method="post" action="{{ route('news.store') }}" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
-                <label for="title">العنوان</label>
+                <label for="title"> العنوان فوق الصوره</label>
                 <input type="text" class="form-control" id="title" name="title" required>
             </div>
-            <div class="form-group">
+            {{-- <div class="form-group">
                 <label for="introduction">نص فوق الصوره</label>
                 <input type="text" class="form-control" id="introduction" name="introduction" required>
-            </div>
+            </div> --}}
             <div class="form-group">
                 <label for="contentone">الوصف الاول</label>
                 <textarea class="form-control" id="contentone" name="contentone" required></textarea>

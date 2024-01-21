@@ -15,6 +15,13 @@
             <option value="{{ $category->id }}">{{ $category->name }}</option>
         @endforeach
     </select> --}}
+    <label for="category_id">اضافه القسم:</label>
+    <select class="form-select" required name="name">
+        <option selected>Select</option>
+        @foreach ($categories1 as $category)
+            <option value="{{ $category->id }}">{{ $category->name }}</option>
+        @endforeach
+    </select>
 
     <label for="title">أدخل رقم القسم:</label>
     <input type="text" name="category_id" id="title" required>

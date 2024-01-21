@@ -21,9 +21,13 @@ class itemController extends Controller
 
     public function index()
     {
-        $categories1 = Category::all();
+        $categories1 = Category::where('id',1)->get();
+        $categories2 = Category::where('id',2)->get();
+        $categories3 = Category::where('id',3)->get();
+        $categories4 = Category::where('id',4)->get();
+        $categories5 = Category::where('id',5)->get();
 
-        return view('index',compact('categories1'));
+        return view('index',compact(['categories1','categories2','categories3','categories4','categories5']));
     }
 
     /**
@@ -31,7 +35,14 @@ class itemController extends Controller
      */
     public function create()
     {
-        return view('dashboard.mainPage.item_create');
+        $categories1 = Category::all();
+        $categories2 = Category::all();
+        $categories3 = Category::all();
+        $categories4 = Category::all();
+        $categories5 = Category::all();
+        return view('dashboard.mainPage.item_create'
+        ,compact(['categories1','categories2','categories3','categories4','categories5'])
+    );
     }
 
     /**
@@ -59,7 +70,7 @@ class itemController extends Controller
         $item->image_url = $imgName;
 
         $item->save();
-      
+
 
         return redirect()->back();
 

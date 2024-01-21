@@ -82,6 +82,8 @@
 
                         </p>
                 </div>
+                <img src="{{asset('images/products/' . $showpro->image)}}" alt="" loading="lazy">
+
             </div>
 
         </div>

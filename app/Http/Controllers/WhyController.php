@@ -35,25 +35,9 @@ class WhyController extends Controller
         $why->description= $request->description;
 
 
-        //add image to var
-        // $img = $request->img;
-
-        // get image name
-        // $imgName = time() . '.' . $img->getClientOriginalExtension();
-
-        // move image wit name to folder in public
-        // $request->img->move('brands', $imgName);
-
-        /// send name og image to culomn in databasew
-        // $brand->brand_img = $imgName;
-
-
-
-
-
         $why->Save();
 
-         return redirect()->route('why.index');
+         return redirect()->back();
 
     }
 

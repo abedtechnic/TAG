@@ -43,40 +43,32 @@
     </section>
 </div>
 {{-- splash --}}
+@foreach ($categories3 as $category)
+
 
 <section class="intro">
 
     <div class="slider" >
         <ul >
-{{-- @foreach ($sliders as $data)
+            @if($category->items !=null)
+     @foreach($category->items as $item)
 
-
-
-        <li style="background-image:url({{ asset('images/slider' . $data->image) }})" alt="slider_pic" loading="lazy">
+        <li style="background-image:url({{asset('images/mainpage/' . $item->image_url )}})" alt="slider_pic" loading="lazy">
           <div class="center-y">
             <h3>
-            {{ $data->main_title }}
-            </h3>
+                {{ $item->title }}
+                        </h3>
             <a href="{{ route('about.index') }}">
-                {{ $data->description }}
+                {{ $item->description }}
             </a>
-          </div>
-        </li> --}}
-        <li style="background-image:url(https://images.unsplash.com/photo-1451906278231-17b8ff0a8880?crop=entropy&fit=crop&fm=jpg&h=675&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1375)">
-          <div class="center-y">
-            <h3>الجوده في المنتجات</h3>
-
-            {{-- <a href="{{ route('product.index') }}"> رؤيه المنتجات</a> --}}
-          </div>
-        </li>
-        <li style="background-image:url(https://images.unsplash.com/photo-1456428199391-a3b1cb5e93ab?crop=entropy&fit=crop&fm=jpg&h=675&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1375)">
-          <div class="center-y">
-            <h3>الالتزام بالمعايير العالميه</h3>
-
-
           </div>
         </li>
       </ul>
+        @endforeach
+    @else
+    @endif
+
+    @endforeach
       {{-- @endforeach --}}
 
       <ul>
@@ -87,7 +79,9 @@
         </nav>
       </ul>
     </div>
+
   </section>
+
 <!-- End Header -->
 
 
@@ -153,7 +147,8 @@
                 <a href="{{route('about.index')}}">المزيد</a>
               </button> --}}
         </div>
-        <img src="{{ $item->image_url }}" alt="{{ $item->title }}" alt="pic1" loading="lazy">
+        <img src="{{asset('images/mainpage/' . $item->image_url )}}" alt="pic1" loading="lazy">
+
         {{-- <img src="{{asset('images/02.jpg')}}" alt="pic1" loading="lazy"> --}}
         @endforeach
          @else
@@ -207,27 +202,41 @@
 
     {{-- start why section --}}
     <section class="whysection">
+@foreach ($categories5 as $category)
 
 
         <div class="row">
             <div class="col-md-12">
             <div class="heading text-center mb-5  ">
-                <h1>لماذا نحن</h1>
+                <h1>
+                   {{ $category->name }}
+                    </h1>
                     <span></span>
         </div>
-
+        @if($category->items !=null)
+@foreach($category->items as $item)
                 <p class="why_p">
-                    نحرص على الالتزام بالمبادئ السامية التي كانت سراً من أسرار النجاح الذي وصلت إليه. كل ذلك رسم وما يزال يرسم مسيرة نجاح وتميز في طريق تحقيق الأهداف الاستراتيجية، نحو التوسع والتطور الذي كانت خطوته الأولى افتتاح فرع المتحدة للخرسانة في مدينة الحديدة وما تلاها من المنشآت والمرافق المترجمة للخطة الاستراتيجية لهذا الصرح الوطني العملاق.
-
+                    {{-- نحرص على الالتزام بالمبادئ السامية التي كانت سراً من أسرار النجاح الذي وصلت إليه. كل ذلك رسم وما يزال يرسم مسيرة نجاح وتميز في طريق تحقيق الأهداف الاستراتيجية، نحو التوسع والتطور الذي كانت خطوته الأولى افتتاح فرع المتحدة للخرسانة في مدينة الحديدة وما تلاها من المنشآت والمرافق المترجمة للخطة الاستراتيجية لهذا الصرح الوطني العملاق. --}}
+                    {{-- {{ $item->description }} --}}
                     </p>
 
             <div class="section-content text-center">
                 <div class="flex-container">
                 <div class="icon-box">
-                    <i class="fa-solid fa-hand-fist"></i>
-                    <h5>الدقه والانضباط</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto maiores .</p>
+
+                    <img src="{{asset('images/mainpage/' . $item->image_url )}}" alt="pic1" loading="lazy">
+
+                    {{-- <i class="fa-solid fa-hand-fist"></i> --}}
+                    <h5>
+                        {{ $item->title }}
+                     </h5>
+                    <p>
+                         {{ $item->sub_description }}
+                    </p>
                 </div>
+                @endforeach
+            @else
+            @endif
                 <div class="icon-box">
                     <i class="fa-regular fa-handshake"></i>
                     <h5>المصداقية والأمانة</h5>
@@ -256,8 +265,13 @@
                 </div> --}}
             </div>
             </div>
+
+
+
+
         </div>
         </div>
+        @endforeach
     </section>
 
 
@@ -270,7 +284,7 @@
 
 
  <section class="manager_speech">
-    @foreach($categories1 as $category)
+    @foreach($categories2 as $category)
     <div class="heading text-center mb-5  ">
         <h1>  {{ $category->name }}</h1>
             <span></span>
@@ -282,14 +296,17 @@
      <section class="home_manager_word"><div class="home_manager_word_content">
 
      <div class="home_manager_word_content_img" >
-         <img src="{{ $item->image_url }}" alt="{{ $item->title }}">
+
+        <img src="{{asset('images/mainpage/' . $item->image_url)}}" alt="" loading="lazy">
+
      </div>
        </div>
-         <h3 class="home_manager_wor    d_title">
+         <h3 class="home_manager_word_title">
              {{ $item->title }}
          </h3>
-      <p class="home_manager_word_content_text" style="transform: translate(0px, 0px); opacity: 1; visibility: inherit;">
-         <p>{{ $item->description }}</p>
+      <p 
+      style="transform: translate(0px, 0px); opacity: 1; visibility: inherit; ">
+         <p class="manegertext">{{ $item->description }}</p>
      </p>
     </div>
     </section>

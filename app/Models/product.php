@@ -17,4 +17,9 @@ class product extends Model
       'productdescription',
       'image'];
 
+      public function productCategory()
+      {
+          return $this->belongsTo(productCategory::class);
+      }
+
 }

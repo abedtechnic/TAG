@@ -171,6 +171,7 @@ a.current_dot {
 
 html {
     scroll-behavior: smooth;
+    touch-action: manipulation;
 }
 
 body {
@@ -2460,12 +2461,12 @@ border-radius: 3px;
     width: 200px
 }
 
-.home_manager_word_content p {
-    color: black;
-
+.manager_speech .manegertext  {
+    color: black
+    ;
     font-size: 22px;
     padding: 0 10%;
-    text-align: center
+    text-align: center;
 }
    .home_manager_word_content_img {
         height: 200px;
@@ -2703,7 +2704,7 @@ mark {
   margin: 20px 0 50px 0;
   text-align: left;
   height: 80vh;
-  background: url(/images/1_3.jpg) no-repeat center center fixed;
+  /* background: url(/images/1_3.jpg) no-repeat center center fixed; */
   background-size: cover;
   transition: all 0.4s ease;
 }
