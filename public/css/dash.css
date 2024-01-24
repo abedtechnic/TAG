@@ -2393,7 +2393,7 @@ samp {
 button,
 input,
 optgroup,
-select,
+/* select, */
 textarea {
   color: inherit;
   /* 1 */
@@ -2418,8 +2418,9 @@ button {
  * Correct `select` style inheritance in Firefox.
  */
 
-button,
-select {
+button
+/* select */
+ {
   text-transform: none;
 }
 
@@ -2435,7 +2436,7 @@ button,
 html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-  -webkit-appearance: button;
+  /* -webkit-appearance: button; */
   /* 2 */
   cursor: pointer;
   /* 3 */
@@ -2502,7 +2503,7 @@ input[type="number"]::-webkit-outer-spin-button {
  */
 
 input[type="search"] {
-  -webkit-appearance: textfield;
+  /* -webkit-appearance: textfield; */
   /* 1 */
   box-sizing: content-box;
   /* 2 */
@@ -2784,7 +2785,7 @@ video.responsive-video {
 .breadcrumb [class*="mdi-"],
 .breadcrumb i.material-icons {
   display: inline-block;
-  float: left;
+  /* float: left; */
   font-size: 24px;
 }
 
@@ -5646,7 +5647,7 @@ button.btn-floating {
 .waves-circle {
   -webkit-transform: translateZ(0);
           transform: translateZ(0);
-  -webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
+  /* -webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%); */
 }
 
 .waves-input-wrapper {
@@ -5667,7 +5668,7 @@ button.btn-floating {
   height: 2.5em;
   line-height: 2.5em;
   border-radius: 50%;
-  -webkit-mask-image: none;
+  /* -webkit-mask-image: none; */
 }
 
 .waves-block {
@@ -5958,7 +5959,7 @@ button.btn-floating {
   position: relative;
   -webkit-transition: opacity .4s;
   transition: opacity .4s;
-  -webkit-backface-visibility: hidden;
+  /* -webkit-backface-visibility: hidden; */
 }
 
 .materialboxed:hover:not(.active) {
@@ -5995,9 +5996,9 @@ button.btn-floating {
   -webkit-font-smoothing: antialiased;
 }
 
-select:focus {
+/* select:focus {
   outline: 1px solid #c9f3ef;
-}
+} */
 
 button:focus {
   outline: none;
@@ -6327,8 +6328,9 @@ textarea.materialize-textarea + label:after {
   margin-left: 5px;
 }
 
-.input-field.inline input,
-.input-field.inline .select-dropdown {
+.input-field.inline input
+/* .input-field.inline .select-dropdown */
+ {
   margin-bottom: 1rem;
 }
 
@@ -6635,9 +6637,9 @@ form p:last-child {
   opacity: 0;
 }
 
-[type="checkbox"] {
+/* [type="checkbox"] { */
   /* checkbox aspect */
-}
+/* } */
 
 [type="checkbox"] + label {
   position: relative;
@@ -6647,13 +6649,13 @@ form p:last-child {
   height: 25px;
   line-height: 25px;
   font-size: 1rem;
-  -webkit-user-select: none;
+  /* -webkit-user-select: none; */
   /* webkit (safari, chrome) browsers */
-  -moz-user-select: none;
+  /* -moz-user-select: none; */
   /* mozilla browsers */
-  -khtml-user-select: none;
+  /* -khtml-user-select: none; */
   /* webkit (konqueror) browsers */
-  -ms-user-select: none;
+  /* -ms-user-select: none; */
   /* IE10+ */
 }
 
@@ -6833,13 +6835,13 @@ form p:last-child {
 /* Switch
    ========================================================================== */
 
-.switch,
+/* .switch,
 .switch * {
   -webkit-user-select: none;
   -moz-user-select: none;
   -khtml-user-select: none;
   -ms-user-select: none;
-}
+} */
 
 .switch label {
   cursor: pointer;
@@ -6912,22 +6914,22 @@ input[type=checkbox]:not(:disabled).tabbed:focus ~ .lever::after {
 /* Select Field
    ========================================================================== */
 
-select {
+/* select {
   display: none;
 }
 
 select.browser-default {
   display: block;
-}
+} */
 
-select {
+/* select {
   background-color: rgba(255, 255, 255, 0.9);
   width: 100%;
   padding: 5px;
   border: 1px solid #f2f2f2;
   border-radius: 2px;
   height: 3rem;
-}
+} */
 
 .select-label {
   position: absolute;
@@ -6975,18 +6977,18 @@ select {
   font-size: 0.8rem;
 }
 
-select:disabled {
+/* select:disabled {
   color: rgba(0, 0, 0, 0.3);
-}
+} */
 
 .select-wrapper input.select-dropdown:disabled {
   color: rgba(0, 0, 0, 0.3);
   cursor: default;
-  -webkit-user-select: none;
+  /* -webkit-user-select: none; */
   /* webkit (safari, chrome) browsers */
-  -moz-user-select: none;
+  /* -moz-user-select: none; */
   /* mozilla browsers */
-  -ms-user-select: none;
+  /* -ms-user-select: none; */
   /* IE10+ */
   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
@@ -7138,10 +7140,10 @@ input[type=range] + .thumb.active .value {
   margin-top: 8px;
   font-size: 10px;
 }
-
+/*
 input[type=range] {
   -webkit-appearance: none;
-}
+} */
 
 input[type=range]::-webkit-slider-runnable-track {
   height: 3px;
@@ -8330,7 +8332,7 @@ input[type=range]:focus::-ms-fill-upper {
   position: fixed;
   -webkit-transition: background 0.15s ease-out, top 0s 0.15s;
   transition: background 0.15s ease-out, top 0s 0.15s;
-  -webkit-backface-visibility: hidden;
+  /* -webkit-backface-visibility: hidden; */
 }
 
 /**
@@ -8410,7 +8412,7 @@ input[type=range]:focus::-ms-fill-upper {
 .picker--opened .picker__holder {
   top: 0;
   background: transparent;
-  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#1E000000,endColorstr=#1E000000)";
+  /* -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#1E000000,endColorstr=#1E000000)"; */
   zoom: 1;
   background: rgba(0, 0, 0, 0.32);
   -webkit-transition: background 0.15s ease-out;
@@ -9273,4 +9275,65 @@ input[type="file"]:focus {
     box-shadow: 0 0 5px rgba(76, 175, 80, 0.7);
 
 }
+
+/* select */
+:root {
+    --background-gradient: linear-gradient(178deg, #ffff33 10%, #3333ff);
+    --gray: #34495e;
+    --darkgray: #2c3e50;
+  }
+
+  select {
+    /* Reset Select */
+    /* appearance: none; */
+    outline: 10px red;
+    border: 4;
+    box-shadow: none;
+    /* Personalize */
+    flex: 1;
+    font-size: 20px;
+    padding: 3px 1em;
+    color: #fff;
+    background-color: var(--darkgray);
+    background-image: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  /* Remove IE arrow */
+  select::-ms-expand {
+    display: none;
+  }
+  /* Custom Select wrapper */
+  .select {
+    position: relative;
+    display: flex;
+    width: 20em;
+    height: 3em;
+    border-radius: .25em;
+    overflow: hidden;
+  }
+  /* Arrow */
+  .select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1em;
+    background-color: #34495e;
+    transition: .25s all ease;
+    pointer-events: none;
+  }
+  /* Transition */
+  .select:hover::after {
+    color: #f39c12;
+  }
+
+
+  .containeroption {
+    /* position : absolute; */
+    top: 60%;
+    left : 30%;
+    transform :translate(-50%,-50%);
+  }
+
 

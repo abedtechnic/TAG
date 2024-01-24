@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\contact;
 use Illuminate\Http\Request;
+use App\Models\ProductCategory;
 
 class contactcontroller extends Controller
 {
@@ -12,9 +13,11 @@ class contactcontroller extends Controller
      */
     public function index()
     {
-        $data = contact::all(); 
+        $pro = ProductCategory::all();
 
-        return view('pages.contact.contact',compact('data'));
+        $data = contact::all();
+
+        return view('pages.contact.contact',compact('data','pro'));
     }
 
     /**

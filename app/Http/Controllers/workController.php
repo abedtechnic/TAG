@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\works;
 use Illuminate\Http\Request;
+use App\Models\product;
 
 class workController extends Controller
 {

@@ -116,7 +116,7 @@
             <li><a href="{{ asset('news/create') }}">صفحه الاخبار</a></li>
             <li><a href="{{ asset('contact/show') }}">صفحه بيانات التواصل</a></li>
             <li><a  href="{{ asset('contact_info') }}">بيانات المستخدم المدخله</a></li>
-            {{-- <li><a  href="{{ asset('card/create') }}">من بطاقه نحن</a></li> --}}
+            <li><a  href="{{ asset('ProductCategory') }}">اضافه صنف جديد للمنتجات</a></li>
             <li><div class="divider"></div></li>
             {{-- <li><a class="subheader">Subheader</a></li> --}}
             {{-- <li><a  href="{{ asset('/create') }}">Third Link With Waves</a></li> --}}

@@ -16,7 +16,7 @@ menuBtn.onclick = ()=>{
 }
 
 cancelBtn.onclick = ()=>{
-  items.classList.remove("active");	
+  items.classList.remove("active");
   menuBtn.classList.remove("hide");
 //   searchBtn.classList.remove("hide");
   cancelBtn.classList.remove("show");
@@ -31,7 +31,7 @@ cancelBtn.onclick = ()=>{
 // }
 
   //button up
- 
+
 window.addEventListener("scroll", function() {
   var scrollButton = document.getElementById("scrollButton");
   if (window.pageYOffset > 100) {
@@ -138,19 +138,19 @@ function toggleHiddenContent(event, contentId, readMoreId, readLessId) {
 }
 
 // start boxscroll
- 
+
 function scrollByPercentage(percentage) {
 	// حساب النسبة المئوية من ارتفاع الشاشة
 	const windowHeight = window.innerHeight;
 	const scrollAmount = (percentage / 100) * windowHeight;
-  
+
 	// التمرير بناءً على النسبة المحسوبة
 	window.scrollBy({
 	  top: scrollAmount,
 	  behavior: 'smooth'
 	});
   }
-///end boxscroll  
+///end boxscroll
 
 //start splash
 // document.addEventListener("DOMContentLoaded", function () {
@@ -171,7 +171,7 @@ function scrollByPercentage(percentage) {
 // 				});
 // 			}, 1000);
 // 		}
-// 	}, 4000); 
+// 	}, 4000);
 // });
 
 
@@ -208,11 +208,11 @@ document.addEventListener("DOMContentLoaded", function () {
 // /start scrollreavel animation
 
 document.addEventListener('DOMContentLoaded', function () {
-ScrollReveal({ 
+ScrollReveal({
 	// reset: true,
 	distance: '80px',
 	duration: 2500,
-	delay: 300 
+	delay: 300
 });
 
 // ScrollReveal().reveal('.heading', {  delay: 500 , origin: 'left' });

@@ -18,8 +18,7 @@
     <label for="product_title">القسم الجديد:</label>
     <input type="text" name="product_title" id="product_title" required>
 
-    <label for="product_desc">وصف القسم:</label>
-    <input type="text" name="product_desc" id="product_desc" required>
+  
 
     <button type="submit">إضافة</button>
 </form>

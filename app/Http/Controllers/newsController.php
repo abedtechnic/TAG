@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\News;
-
+use App\Models\ProductCategory;
 class newsController extends Controller
 {
     /**
@@ -12,9 +12,11 @@ class newsController extends Controller
      */
     public function index()
     {
+        $pro = ProductCategory::all();
+
           $showDataNews = news::all();
 
-          return view('pages.news.news', compact('showDataNews'));
+          return view('pages.news.news', compact('showDataNews','pro'));
     }
 
     /**

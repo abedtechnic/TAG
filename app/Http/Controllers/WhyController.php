@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\why;
 use Illuminate\Http\Request;
-
+use App\Models\ProductCategory;
 class WhyController extends Controller
 {
     /**
@@ -12,9 +12,11 @@ class WhyController extends Controller
      */
     public function index()
     {
+        $pro = ProductCategory::all();
+
         $showDataWhy = why::all();
 
-        return view('pages.why.why_show',compact('showDataWhy'));
+        return view('pages.why.why_show',compact('showDataWhy','pro'));
     }
 
     /**

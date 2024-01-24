@@ -10,6 +10,8 @@ use App\Http\Controllers\itemController;
 use App\Http\Controllers\aboutController;
 use App\Http\Controllers\contactinfoController;
 use App\Http\Controllers\categoryController;
+use App\Http\Controllers\ProductCategoryController;
+use App\Http\Controllers\propycategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,9 +27,12 @@ Route::resource('why', WhyController::class);
 Route::resource('contact', contactcontroller::class);
 Route::resource('contact_info', contactinfoController::class);
 Route::resource('product', productcontroller::class);
+Route::resource('ProductCategory', ProductCategoryController::class);
+
 Route::resource('news', newsController::class);
 Route::resource('category', categoryController::class);
 Route::resource('about', aboutController::class);
+Route::resource('proByCate', propycategoryController::class);
 Route::resource('/', ItemController::class, [
     'names' => [
         // 'index' => 'items.index',

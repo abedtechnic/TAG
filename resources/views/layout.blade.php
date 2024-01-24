@@ -14,25 +14,56 @@
             </div>
 
             <div class="nav-items">
-                {{-- <ul>
-                    <li><a href="/" class="active">@lang('public.home') </a></li>
-                    <li><a href="{{ route('about') }}">@lang('public.ABOUT')</a></li>
-                    <li><a href="{{ route('newproduct') }}">@lang('public.PRODUCTS')</a></li>
-                    <li><a href="{{ route('work') }}">@lang('public.WORK')</a></li>
-                    <li><a href="{{ route('why') }}">  @lang('public.WHY')</a></li>
-                    <li><a href="{{ route('contact') }}">@lang('public.CONTACT')</a></li>
-                </ul> --}}
                  <ul>
                     <li><a href="{{route('index')}}">@lang('public.home')</a></li>
                     <li><a href="{{ route('about.index') }}" >@lang('public.ABOUT')</a></li>
-                    <li><a href="{{ route('product.index') }}" >@lang('public.PRODUCTS')</a></li>
+                    @foreach ($pro as $category)
+                    <li><a href="{{ route('proByCate.show', $category->id) }}" >{{  $category->product_title}}</a>
+                        @endforeach
+                    </li>
+                        {{-- <ul class="paste-button">
+                             @foreach ($pro as $category)
+                            <li value="{{ $category->id }}">
+                                <a href="{{ route('proByCate.show', $category->id) }}">
+                                    {{  $category->product_title}}</a>
+                                </li>
+                            @endforeach
+                        </ul> --}}
+
+
+
+                        {{-- <ul class="paste-button" >
+                     <select class="select" >
+                            @foreach ($pro as $category)
+
+                            <option value="{{ $category->id }}">
+                                <li>
+                                    <a class="paste-button" href="{{ route('proByCate.show', $category->id) }
+                                    ">
+                                        {{ $category->product_title }}
+                                    </a>
+                                </li>
+                            </option>
+                            @endforeach
+                        </select>
+                        </ul> --}}
+
+
+
+
+
+
+
+
+
+                    {{-- </li> --}}
                     <li><a href="{{ route('news.index') }}">@lang('public.WORK')</a></li>
                     <li><a href="{{ route('why.index') }}" class="{{ Request::is('pages/why') ? 'active' : '' }}">@lang('public.WHY')</a></li>
                     <li><a href="{{ route('contact.index') }}" class="{{ Request::is('pages/contact') ? 'active' : '' }}">@lang('public.CONTACT')</a></li>
                 </ul>
 
 
-                 
+
 
             </div>
 

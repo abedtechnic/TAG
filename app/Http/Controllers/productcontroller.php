@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\product;
+use App\Models\ProductCategory;
+
 use Illuminate\Http\Request;
 
 class productcontroller extends Controller
@@ -12,9 +14,12 @@ class productcontroller extends Controller
      */
     public function index()
     {
-        $showDataProduct = product::all();
+        // $showDataProduct = product::all();
 
-        return view('pages.products.newproduct',compact('showDataProduct'));
+        // return view('pages.products.newproduct',compact('showDataProduct'));
+        // $categories1 = ProductCategory::where('id',1)->get();
+        // $categories2 = ProductCategory::where('id',2)->get();
+        // return view('pages.products.newproduct');
     }
 
     /**
@@ -22,7 +27,9 @@ class productcontroller extends Controller
      */
     public function create()
     {
-        return view('dashboard.product_create');
+        $category = ProductCategory::all();
+
+        return view('dashboard.product.product_create',compact('category'));
     }
 
     /**
@@ -32,11 +39,9 @@ class productcontroller extends Controller
     {
         $product = new product;
 
-        $product->maintitle = $request->maintitle;
-        $product->secondarytitle = $request->secondarytitle;
-        $product->descriptiontitle = $request->descriptiontitle;
-        $product->productname = $request->productname;
-        $product->productdescription = $request->productdescription;
+        $product->product_name = $request->product_name;
+        $product->product_description = $request->product_description;
+        $product->product_categories_id = $request->categorie_id;
         $product->image = $request->image;
 
         $img = $request->image;
@@ -49,7 +54,7 @@ class productcontroller extends Controller
 
         $product->Save();
 
-        return redirect()->route('product.index');
+        return redirect()->back();
     }
 
     /**

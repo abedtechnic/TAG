@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\about;
 use Illuminate\Http\Request;
-
+use App\Models\ProductCategory;
 class aboutController extends Controller
 {
     /**
@@ -12,9 +12,11 @@ class aboutController extends Controller
      */
     public function index()
     {
+        $pro = ProductCategory::all();
+
         $aboutData = about::all();
 
-        return view('pages.about', compact('aboutData'));
+        return view('pages.about', compact('aboutData','pro'));
     }
 
     /**

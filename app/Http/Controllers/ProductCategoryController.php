@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\ProductCategory;
+use App\Models\product;
 use Illuminate\Http\Request;
 
 class ProductCategoryController extends Controller
@@ -11,9 +12,10 @@ class ProductCategoryController extends Controller
      */
     public function index()
     {
+        $pro = ProductCategory::all();
 
         $data = ProductCategory::all();
-        return view('dashboard.product.product_category_create', compact('data'));
+        return view('dashboard.product.product_category_create', compact('data','pro'));
     }
 
     /**
@@ -32,7 +34,7 @@ class ProductCategoryController extends Controller
         $category = new ProductCategory;
 
         $category->product_title = $request->product_title;
-        $category->product_desc = $request->product_desc;
+        // $category->product_desc = $request->product_desc;
         $category->save();
 
          return redirect()->back();

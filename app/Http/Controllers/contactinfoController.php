@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\contactinfo;
 use Illuminate\Http\Request;
-
+use App\Models\ProductCategory;
 class contactinfoController extends Controller
 {
     /**
@@ -12,8 +12,10 @@ class contactinfoController extends Controller
      */
     public function index()
     {
+        $pro = ProductCategory::all();
+
        $data = contactinfo::all();
-   return view('dashboard.contactinfo_show', compact('data'));
+   return view('dashboard.contactinfo_show', compact('data','pro'));
 
     }
 
