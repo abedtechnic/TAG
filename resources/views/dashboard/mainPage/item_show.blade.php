@@ -3,11 +3,12 @@
 @section('dashcontent')
 <div class="container">
     <br>
-{{-- card table --}}
+{{-- about table --}}
+
 <div class="row">
 
     <a
-        class="btn btn-primary" href="{{ route('card.create') }}">انشاء جديد</a>
+        class="btn btn-primary" href="{{ route('items.create') }}">انشاء جديد</a>
 
 </div>
 
@@ -16,9 +17,12 @@
         <tr>
             <th>number</th>
             <th>title</th>
-            <th>card_description </th>
-            <th>card_image </th>
-            <th>edit</th>
+            <th>sub_title</th>
+            <th>description </th>
+            <th>sub_description</th>
+            <th>image_url</th>
+            <th>category_id </th>
+            <th>edit </th>
             <th>delete</th>
 
         </tr>
@@ -27,13 +31,16 @@
     <tbody>
         <tr>
                     <td>{{ $show->id }}</td>
-                    <td>{{ $show->main_title }}</td>
                     <td>{{ $show->title }}</td>
-                    <td>{{ $show->card_description }}</td>
-                    <td>{{ $show->image }}</td>
+                    <td>{{ $show->sub_title }}</td>
+                    <td>{{ $show->description }}</td>
+                    <td>{{ $show->sub_description }}</td>
+                    <td><img src="/public/images/mainpage/{{ $show->image_url }}" alt="image"></td>
+                    <td>{{ $show->category_id }}</td>
+
 
                     <td>
-                        <a href="{{ route('card.edit', $show->id) }} " class="updatebtn" >edit</a>
+                        <a href="{{ route('items.edit', $show->id) }} " class="updatebtn" >edit</a>
 
                     </td>
 
@@ -41,9 +48,10 @@
                     <td>
 
 
-                        <form action="{{ route('card.destroy', $show->id) }}" method="post">
-                            @method('DELETE')
+                        <form action="{{ route('items.destroy', $show->id) }}" method="post">
                             @csrf
+                            @method('DELETE')
+
                             <button class="deletebtn" type="submit"
                             onclick="return confirm('هل انت متاكد من عملية الحذف ?')">
                             Delete
@@ -54,6 +62,7 @@
     </tbody>
     @endforeach
 </table>
-{{-- end card table --}}
+{{-- end about table --}}
+
 </div>
 @endsection

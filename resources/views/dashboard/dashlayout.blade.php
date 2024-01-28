@@ -107,8 +107,9 @@
               </div>
             </li>
 
-            {{-- <li><a href="#!"><i class="">cloud</i>First Link With Icon</a></li> --}}
+
             <li><a  href="{{ asset('/create') }}"> اضافة بيانات القسم</a></li>
+
             <li><a  href="{{ asset('category') }}"> اقسام الصفحه الرئيسيه</a></li>
             <li><a  href="{{ asset('about/create') }}">الاعمال </a></li>
             <li><a href="{{ asset('why/create') }}">صفحه لماذا نحن</a></li>
@@ -118,12 +119,6 @@
             <li><a  href="{{ asset('contact_info') }}">بيانات المستخدم المدخله</a></li>
             <li><a  href="{{ asset('ProductCategory') }}">اضافه صنف جديد للمنتجات</a></li>
             <li><div class="divider"></div></li>
-            {{-- <li><a class="subheader">Subheader</a></li> --}}
-            {{-- <li><a  href="{{ asset('/create') }}">Third Link With Waves</a></li> --}}
-            {{-- <li><a  href="{{ asset('counter/create') }}">Third Link With Waves</a></li> --}}
-
-
-            {{-- <li><a  href="{{ asset('/create') }}"> اضافة بيانات القسم</a></li> --}}
           </ul>
         </aside>
         <!-- End of main sidebar -->

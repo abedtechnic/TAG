@@ -41,6 +41,12 @@
             <br>
             <button type="submit" class="btn btn-primary">حفظ</button>
         </form>
+        <br>
+        <div class="row">
+            <a
+                class="btn btn-primary" href="{{ asset('ProductCategory/show')}}">عرض البيانات</a>
+
+        </div>
 
         <br>
     </div>

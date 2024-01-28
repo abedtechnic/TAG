@@ -38,5 +38,10 @@
 <br>
     <button type="submit" class="btn btn-primary">إضافة</button>
 </form>
+<br>
+<div class="row">
+    <a  class="btn btn-primary" href="{{ asset('item/show')}}">عرض البيانات</a>
+
+</div>
 
 @endsection

@@ -33,7 +33,7 @@ Route::resource('news', newsController::class);
 Route::resource('category', categoryController::class);
 Route::resource('about', aboutController::class);
 Route::resource('proByCate', propycategoryController::class);
-Route::resource('/', ItemController::class, [
+Route::resource('/', itemController::class, [
     'names' => [
         // 'index' => 'items.index',
         'create' => 'items.create',

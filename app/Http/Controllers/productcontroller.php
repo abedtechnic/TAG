@@ -14,12 +14,7 @@ class productcontroller extends Controller
      */
     public function index()
     {
-        // $showDataProduct = product::all();
 
-        // return view('pages.products.newproduct',compact('showDataProduct'));
-        // $categories1 = ProductCategory::where('id',1)->get();
-        // $categories2 = ProductCategory::where('id',2)->get();
-        // return view('pages.products.newproduct');
     }
 
     /**
@@ -62,30 +57,59 @@ class productcontroller extends Controller
      */
     public function show(product $product)
     {
-        //
+
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(product $product)
+    public function edit($id)
     {
-        //
+        // $category = ProductCategory::find($id);
+        // $editproduct = product::find($id);
+
+        // return View('dashboard.product.product_edit', compact('editproduct','category'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, product $product)
+    public function update($id)
     {
-        //
+
+        // $editCategory = ProductCategory::find($id);
+         // Find Data and Update it
+    //      $updatepro = product::find($id);
+
+    //     $updatepro->product_name = $request->product_name;
+    //     $updatepro->product_description = $request->product_description;
+    //     $updatepro->product_categories_id = $request->product_categories_id;
+    //     $updatepro->image = $request->image;
+
+    //     $img = $request->image;
+
+
+
+    //     if ($img) {
+    //         $imgName = time() . '.' . $img->getClientOriginalExtension();
+
+    //         $request->image->move('images/news', $imgName);
+
+    //         $updatepro->image = $imgName;
+    //     }
+
+    //   $updatepro->save();
+
+    //   return redirect()->route('news.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(product $product)
-    {
-        //
-    }
+    public function destroy(string $id)
+{
+  //
+}
+
+
 }

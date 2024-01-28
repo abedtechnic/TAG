@@ -84,9 +84,14 @@ class itemController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($id)
     {
-        //
+        $data = Category::all();
+        // $categories2 = Category::all();
+        // $categories3 = Category::all();
+        // $categories4 = Category::all();
+        // $categories5 = Category::all();
+        return view('dashboard.mainPage.item_show',['data' => $data]);
     }
 
     /**

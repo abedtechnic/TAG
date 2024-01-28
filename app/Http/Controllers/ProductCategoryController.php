@@ -43,17 +43,18 @@ class ProductCategoryController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show( $id)
     {
-        //
+        $data = product::all();
+        return view('dashboard.product.product_show', compact('data'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
-        //
+
     }
 
     /**
@@ -69,6 +70,15 @@ class ProductCategoryController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $deletedata = ProductCategory::find($id);
+
+        if ($deletedata) {
+            $deletedata->delete();
+
+            return redirect()->back();
+        } else {
+
+            return redirect()->back()->with('error', 'لم يتم العثور على السجل للحذف');
+    }
     }
 }

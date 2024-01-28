@@ -13,7 +13,7 @@
                 <li><a href="{{route('about.index')}}">الأعمال</a></li>
                 <li><a href="{{route('why.index')}}">لماذا نحن</a></li>
                 <li><a href="{{route('news.index')}}">اخر الاخبار </a></li>
-                 <li><a href="{{route('product.index')}}">المنتجات</a></li>
+                 {{-- <li><a href="{{route('product.index')}}">المنتجات</a></li> --}}
                 <li><a href="{{route('contact.index')}}">تواصل معنا</a></li>
             </ul>
         </div>
