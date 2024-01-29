@@ -20,8 +20,8 @@
             <th>product_description</th>
             <th>product_categories_id</th>
             <th>image </th>
-            {{-- <th>edit </th>
-            <th>delete</th> --}}
+            <th>edit </th>
+            <th>delete</th>
 
         </tr>
     </thead>
@@ -32,11 +32,11 @@
                     <td>{{ $show->product_name }}</td>
                     <td>{{ $show->product_description }}</td>
                     <td>{{ $show->product_categories_id }}</td>
-                    <td><img src="/public/images/product/{{ $show->image }}" alt="image"></td>
+                    <td><img src="/images/products/{{ $show->image }}" height="100" width="100" alt="image"></td>
 
 
 
-                    {{-- <td>
+                    <td>
                         <a href="{{ route('product.edit', $show->id) }} " class="updatebtn" >edit</a>
 
                     </td>
@@ -45,16 +45,16 @@
                     <td>
 
 
-                        <form action="{{ route('ProductCategory.destroy', $show->id) }}" method="post">
+                        <form action="{{ route('product.destroy', $show->id) }}" method="post" enctype="multipart/form-data">
                             @csrf
                             @method('DELETE')
 
                             <button class="deletebtn" type="submit"
                             onclick="return confirm('هل انت متاكد من عملية الحذف ?')">
                             Delete
-                        </button>
+                            </button>
                     </form>
-                    </td> --}}
+                    </td>
         </tr>
     </tbody>
     @endforeach

@@ -65,50 +65,50 @@ class productcontroller extends Controller
      */
     public function edit($id)
     {
-        // $category = ProductCategory::find($id);
-        // $editproduct = product::find($id);
+        $category = ProductCategory::all();
+        $editproduct = product::find($id);
 
-        // return View('dashboard.product.product_edit', compact('editproduct','category'));
+        return View('dashboard.product.product_edit', compact('editproduct','category'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update($id)
+    public function update(Request $request , $id)
     {
+        $updatepro = product::find($id);
 
-        // $editCategory = ProductCategory::find($id);
-         // Find Data and Update it
-    //      $updatepro = product::find($id);
+        $updatepro->product_name = $request->product_name;
+        $updatepro->product_description = $request->product_description;
+        $updatepro->product_categories_id = $request->product_categories_id;
+        $updatepro->image = $request->image;
 
-    //     $updatepro->product_name = $request->product_name;
-    //     $updatepro->product_description = $request->product_description;
-    //     $updatepro->product_categories_id = $request->product_categories_id;
-    //     $updatepro->image = $request->image;
-
-    //     $img = $request->image;
+        $img = $request->image;
 
 
 
-    //     if ($img) {
-    //         $imgName = time() . '.' . $img->getClientOriginalExtension();
+        if ($img) {
+            $imgName = time() . '.' . $img->getClientOriginalExtension();
 
-    //         $request->image->move('images/news', $imgName);
+            $request->image->move('images/products', $imgName);
 
-    //         $updatepro->image = $imgName;
-    //     }
+            $updatepro->image = $imgName;
+        }
 
-    //   $updatepro->save();
+      $updatepro->save();
 
-    //   return redirect()->route('news.index');
+      return redirect()->back();
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
 {
-  //
+    $delete = product::find($id);
+    unlink('images/products/' . $delete->image);
+    $delete->delete();
+    return redirect()->back();
 }
 
 

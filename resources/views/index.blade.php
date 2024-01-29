@@ -4,7 +4,7 @@
 
             {{-- splash --}}
 
-             {{-- <div id="preloader-body" class="no-scroll-y">
+             <div id="preloader-body" class="no-scroll-y">
 
 
                    <section id="preloader-section">
@@ -32,7 +32,7 @@
                         </div>
                     </div>
                 </section>
-            </div> --}}
+            </div>
 
             {{-- splash --}}
 
@@ -72,8 +72,8 @@
                         @else
                         @endif
 
-                        @endforeach
-            </section>
+             @endforeach
+          </section>
             <!-- End Header -->
 
 
